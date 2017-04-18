@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-i18n/i18n/i18n.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-i18n/node_modules/i18n/i18n.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-i18n">npmtest-i18n (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-i18n/i18n/i18n.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-i18n/node_modules/i18n/i18n.js</span></h1>
     <h2>
         
         Statements: <span class="metric">8.44% <small>(41 / 486)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-i18n/i18n/</a> &#187; i18n.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-i18n/node_modules/i18n/</a> » i18n.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -2640,105 +2638,105 @@ module.exports = (function() {
 &nbsp;
   i18n.version = '0.8.3';
 &nbsp;
-  i18n.configure = <span class="fstat-no" title="function not covered" >function i18nConfigure(opt) {</span>
+  i18n.configure = <span class="fstat-no" title="function not covered">function i18nConfigure(opt) {</span>
 &nbsp;
     // reset locales
-<span class="cstat-no" title="statement not covered" >    locales = {};</span>
+<span class="cstat-no" title="statement not covered">    locales = {};</span>
 &nbsp;
     // Provide custom API method aliases if desired
     // This needs to be processed before the first call to applyAPItoObject()
-<span class="cstat-no" title="statement not covered" >    if (opt.api &amp;&amp; typeof opt.api === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      for (var method in opt.api) {</span>
-<span class="cstat-no" title="statement not covered" >        if (opt.api.hasOwnProperty(method)) {</span>
-<span class="cstat-no" title="statement not covered" >          var alias = opt.api[method];</span>
-<span class="cstat-no" title="statement not covered" >          if (typeof api[method] !== 'undefined') {</span>
-<span class="cstat-no" title="statement not covered" >            api[method] = alias;</span>
+<span class="cstat-no" title="statement not covered">    if (opt.api &amp;&amp; typeof opt.api === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      for (var method in opt.api) {</span>
+<span class="cstat-no" title="statement not covered">        if (opt.api.hasOwnProperty(method)) {</span>
+<span class="cstat-no" title="statement not covered">          var alias = opt.api[method];</span>
+<span class="cstat-no" title="statement not covered">          if (typeof api[method] !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered">            api[method] = alias;</span>
           }
         }
       }
     }
 &nbsp;
     // you may register i18n in global scope, up to you
-<span class="cstat-no" title="statement not covered" >    if (typeof opt.register === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      register = opt.register;</span>
+<span class="cstat-no" title="statement not covered">    if (typeof opt.register === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      register = opt.register;</span>
       // or give an array objects to register to
-<span class="cstat-no" title="statement not covered" >      if (Array.isArray(opt.register)) {</span>
-<span class="cstat-no" title="statement not covered" >        register = opt.register;</span>
-<span class="cstat-no" title="statement not covered" >        register.forEach(<span class="fstat-no" title="function not covered" >function(r) {</span></span>
-<span class="cstat-no" title="statement not covered" >          applyAPItoObject(r);</span>
+<span class="cstat-no" title="statement not covered">      if (Array.isArray(opt.register)) {</span>
+<span class="cstat-no" title="statement not covered">        register = opt.register;</span>
+<span class="cstat-no" title="statement not covered">        register.forEach(<span class="fstat-no" title="function not covered">function(r) {</span></span>
+<span class="cstat-no" title="statement not covered">          applyAPItoObject(r);</span>
         });
       } else {
-<span class="cstat-no" title="statement not covered" >        applyAPItoObject(opt.register);</span>
+<span class="cstat-no" title="statement not covered">        applyAPItoObject(opt.register);</span>
       }
     }
 &nbsp;
     // sets a custom cookie name to parse locale settings from
-<span class="cstat-no" title="statement not covered" >    cookiename = (typeof opt.cookie === 'string') ? opt.cookie : null;</span>
+<span class="cstat-no" title="statement not covered">    cookiename = (typeof opt.cookie === 'string') ? opt.cookie : null;</span>
 &nbsp;
     // query-string parameter to be watched - @todo: add test &amp; doc
-<span class="cstat-no" title="statement not covered" >    queryParameter = (typeof opt.queryParameter === 'string') ? opt.queryParameter : null;</span>
+<span class="cstat-no" title="statement not covered">    queryParameter = (typeof opt.queryParameter === 'string') ? opt.queryParameter : null;</span>
 &nbsp;
     // where to store json files
-<span class="cstat-no" title="statement not covered" >    directory = (typeof opt.directory === 'string') ?</span>
+<span class="cstat-no" title="statement not covered">    directory = (typeof opt.directory === 'string') ?</span>
       opt.directory : path.join(__dirname, 'locales');
 &nbsp;
     // permissions when creating new directories
-<span class="cstat-no" title="statement not covered" >    directoryPermissions = (typeof opt.directoryPermissions === 'string') ?</span>
+<span class="cstat-no" title="statement not covered">    directoryPermissions = (typeof opt.directoryPermissions === 'string') ?</span>
       parseInt(opt.directoryPermissions, 8) : null;
 &nbsp;
     // write new locale information to disk
-<span class="cstat-no" title="statement not covered" >    updateFiles = (typeof opt.updateFiles === 'boolean') ? opt.updateFiles : true;</span>
+<span class="cstat-no" title="statement not covered">    updateFiles = (typeof opt.updateFiles === 'boolean') ? opt.updateFiles : true;</span>
 &nbsp;
     // sync locale information accros all files
-<span class="cstat-no" title="statement not covered" >    syncFiles = (typeof opt.syncFiles === 'boolean') ? opt.syncFiles : false;</span>
+<span class="cstat-no" title="statement not covered">    syncFiles = (typeof opt.syncFiles === 'boolean') ? opt.syncFiles : false;</span>
 &nbsp;
     // what to use as the indentation unit (ex: "\t", "  ")
-<span class="cstat-no" title="statement not covered" >    indent = (typeof opt.indent === 'string') ? opt.indent : '\t';</span>
+<span class="cstat-no" title="statement not covered">    indent = (typeof opt.indent === 'string') ? opt.indent : '\t';</span>
 &nbsp;
     // json files prefix
-<span class="cstat-no" title="statement not covered" >    prefix = (typeof opt.prefix === 'string') ? opt.prefix : '';</span>
+<span class="cstat-no" title="statement not covered">    prefix = (typeof opt.prefix === 'string') ? opt.prefix : '';</span>
 &nbsp;
     // where to store json files
-<span class="cstat-no" title="statement not covered" >    extension = (typeof opt.extension === 'string') ? opt.extension : '.json';</span>
+<span class="cstat-no" title="statement not covered">    extension = (typeof opt.extension === 'string') ? opt.extension : '.json';</span>
 &nbsp;
     // setting defaultLocale
-<span class="cstat-no" title="statement not covered" >    defaultLocale = (typeof opt.defaultLocale === 'string') ? opt.defaultLocale : 'en';</span>
+<span class="cstat-no" title="statement not covered">    defaultLocale = (typeof opt.defaultLocale === 'string') ? opt.defaultLocale : 'en';</span>
 &nbsp;
     // auto reload locale files when changed
-<span class="cstat-no" title="statement not covered" >    autoReload = (typeof opt.autoReload === 'boolean') ? opt.autoReload : false;</span>
+<span class="cstat-no" title="statement not covered">    autoReload = (typeof opt.autoReload === 'boolean') ? opt.autoReload : false;</span>
 &nbsp;
     // enable object notation?
-<span class="cstat-no" title="statement not covered" >    objectNotation = (typeof opt.objectNotation !== 'undefined') ? opt.objectNotation : false;</span>
-<span class="cstat-no" title="statement not covered" >    if (objectNotation === true) <span class="cstat-no" title="statement not covered" >objectNotation = '.';</span></span>
+<span class="cstat-no" title="statement not covered">    objectNotation = (typeof opt.objectNotation !== 'undefined') ? opt.objectNotation : false;</span>
+<span class="cstat-no" title="statement not covered">    if (objectNotation === true) <span class="cstat-no" title="statement not covered">objectNotation = '.';</span></span>
 &nbsp;
     // read language fallback map
-<span class="cstat-no" title="statement not covered" >    fallbacks = (typeof opt.fallbacks === 'object') ? opt.fallbacks : {};</span>
+<span class="cstat-no" title="statement not covered">    fallbacks = (typeof opt.fallbacks === 'object') ? opt.fallbacks : {};</span>
 &nbsp;
     // setting custom logger functions
-<span class="cstat-no" title="statement not covered" >    logDebugFn = (typeof opt.logDebugFn === 'function') ? opt.logDebugFn : debug;</span>
-<span class="cstat-no" title="statement not covered" >    logWarnFn = (typeof opt.logWarnFn === 'function') ? opt.logWarnFn : warn;</span>
-<span class="cstat-no" title="statement not covered" >    logErrorFn = (typeof opt.logErrorFn === 'function') ? opt.logErrorFn : error;</span>
+<span class="cstat-no" title="statement not covered">    logDebugFn = (typeof opt.logDebugFn === 'function') ? opt.logDebugFn : debug;</span>
+<span class="cstat-no" title="statement not covered">    logWarnFn = (typeof opt.logWarnFn === 'function') ? opt.logWarnFn : warn;</span>
+<span class="cstat-no" title="statement not covered">    logErrorFn = (typeof opt.logErrorFn === 'function') ? opt.logErrorFn : error;</span>
 &nbsp;
     // when missing locales we try to guess that from directory
-<span class="cstat-no" title="statement not covered" >    opt.locales = opt.locales || guessLocales(directory);</span>
+<span class="cstat-no" title="statement not covered">    opt.locales = opt.locales || guessLocales(directory);</span>
 &nbsp;
     // implicitly read all locales
-<span class="cstat-no" title="statement not covered" >    if (Array.isArray(opt.locales)) {</span>
+<span class="cstat-no" title="statement not covered">    if (Array.isArray(opt.locales)) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      opt.locales.forEach(<span class="fstat-no" title="function not covered" >function(l) {</span></span>
-<span class="cstat-no" title="statement not covered" >        read(l);</span>
+<span class="cstat-no" title="statement not covered">      opt.locales.forEach(<span class="fstat-no" title="function not covered">function(l) {</span></span>
+<span class="cstat-no" title="statement not covered">        read(l);</span>
       });
 &nbsp;
       // auto reload locale files when changed
-<span class="cstat-no" title="statement not covered" >      if (autoReload) {</span>
+<span class="cstat-no" title="statement not covered">      if (autoReload) {</span>
 &nbsp;
         // watch changes of locale files (it's called twice because fs.watch is still unstable)
-<span class="cstat-no" title="statement not covered" >        fs.watch(directory, <span class="fstat-no" title="function not covered" >function(event, filename) {</span></span>
-<span class="cstat-no" title="statement not covered" >          var localeFromFile = guessLocaleFromFile(filename);</span>
+<span class="cstat-no" title="statement not covered">        fs.watch(directory, <span class="fstat-no" title="function not covered">function(event, filename) {</span></span>
+<span class="cstat-no" title="statement not covered">          var localeFromFile = guessLocaleFromFile(filename);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          if (localeFromFile &amp;&amp; opt.locales.indexOf(localeFromFile) &gt; -1) {</span>
-<span class="cstat-no" title="statement not covered" >            logDebug('Auto reloading locale file "' + filename + '".');</span>
-<span class="cstat-no" title="statement not covered" >            read(localeFromFile);</span>
+<span class="cstat-no" title="statement not covered">          if (localeFromFile &amp;&amp; opt.locales.indexOf(localeFromFile) &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered">            logDebug('Auto reloading locale file "' + filename + '".');</span>
+<span class="cstat-no" title="statement not covered">            read(localeFromFile);</span>
           }
 &nbsp;
         });
@@ -2746,584 +2744,584 @@ module.exports = (function() {
     }
   };
 &nbsp;
-  i18n.init = <span class="fstat-no" title="function not covered" >function i18nInit(request, response, next) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof request === 'object') {</span>
+  i18n.init = <span class="fstat-no" title="function not covered">function i18nInit(request, response, next) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof request === 'object') {</span>
 &nbsp;
       // guess requested language/locale
-<span class="cstat-no" title="statement not covered" >      guessLanguage(request);</span>
+<span class="cstat-no" title="statement not covered">      guessLanguage(request);</span>
 &nbsp;
       // bind api to req
-<span class="cstat-no" title="statement not covered" >      applyAPItoObject(request);</span>
+<span class="cstat-no" title="statement not covered">      applyAPItoObject(request);</span>
 &nbsp;
       // looks double but will ensure schema on api refactor
-<span class="cstat-no" title="statement not covered" >      i18n.setLocale(request, request.locale);</span>
+<span class="cstat-no" title="statement not covered">      i18n.setLocale(request, request.locale);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      return logError('i18n.init must be called with one parameter minimum, ie. i18n.init(req)');</span>
+<span class="cstat-no" title="statement not covered">      return logError('i18n.init must be called with one parameter minimum, ie. i18n.init(req)');</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (typeof response === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      applyAPItoObject(response);</span>
+<span class="cstat-no" title="statement not covered">    if (typeof response === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      applyAPItoObject(response);</span>
 &nbsp;
       // and set that locale to response too
-<span class="cstat-no" title="statement not covered" >      i18n.setLocale(response, request.locale);</span>
+<span class="cstat-no" title="statement not covered">      i18n.setLocale(response, request.locale);</span>
     }
 &nbsp;
     // head over to next callback when bound as middleware
-<span class="cstat-no" title="statement not covered" >    if (typeof next === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      return next();</span>
+<span class="cstat-no" title="statement not covered">    if (typeof next === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      return next();</span>
     }
   };
 &nbsp;
-  i18n.__ = <span class="fstat-no" title="function not covered" >function i18nTranslate(phrase) {</span>
-<span class="cstat-no" title="statement not covered" >    var msg;</span>
-<span class="cstat-no" title="statement not covered" >    var argv = parseArgv(arguments);</span>
-<span class="cstat-no" title="statement not covered" >    var namedValues = argv[0];</span>
-<span class="cstat-no" title="statement not covered" >    var args = argv[1];</span>
+  i18n.__ = <span class="fstat-no" title="function not covered">function i18nTranslate(phrase) {</span>
+<span class="cstat-no" title="statement not covered">    var msg;</span>
+<span class="cstat-no" title="statement not covered">    var argv = parseArgv(arguments);</span>
+<span class="cstat-no" title="statement not covered">    var namedValues = argv[0];</span>
+<span class="cstat-no" title="statement not covered">    var args = argv[1];</span>
 &nbsp;
     // called like __({phrase: "Hello", locale: "en"})
-<span class="cstat-no" title="statement not covered" >    if (typeof phrase === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof phrase.locale === 'string' &amp;&amp; typeof phrase.phrase === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >        msg = translate(phrase.locale, phrase.phrase);</span>
+<span class="cstat-no" title="statement not covered">    if (typeof phrase === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof phrase.locale === 'string' &amp;&amp; typeof phrase.phrase === 'string') {</span>
+<span class="cstat-no" title="statement not covered">        msg = translate(phrase.locale, phrase.phrase);</span>
       }
     }
     // called like __("Hello")
     else {
       // get translated message with locale from scope (deprecated) or object
-<span class="cstat-no" title="statement not covered" >      msg = translate(getLocaleFromObject(this), phrase);</span>
+<span class="cstat-no" title="statement not covered">      msg = translate(getLocaleFromObject(this), phrase);</span>
     }
 &nbsp;
     // postprocess to get compatible to plurals
-<span class="cstat-no" title="statement not covered" >    if (typeof msg === 'object' &amp;&amp; msg.one) {</span>
-<span class="cstat-no" title="statement not covered" >      msg = msg.one;</span>
+<span class="cstat-no" title="statement not covered">    if (typeof msg === 'object' &amp;&amp; msg.one) {</span>
+<span class="cstat-no" title="statement not covered">      msg = msg.one;</span>
     }
 &nbsp;
     // in case there is no 'one' but an 'other' rule
-<span class="cstat-no" title="statement not covered" >    if (typeof msg === 'object' &amp;&amp; msg.other) {</span>
-<span class="cstat-no" title="statement not covered" >      msg = msg.other;</span>
+<span class="cstat-no" title="statement not covered">    if (typeof msg === 'object' &amp;&amp; msg.other) {</span>
+<span class="cstat-no" title="statement not covered">      msg = msg.other;</span>
     }
 &nbsp;
     // head over to postProcessing
-<span class="cstat-no" title="statement not covered" >    return postProcess(msg, namedValues, args);</span>
+<span class="cstat-no" title="statement not covered">    return postProcess(msg, namedValues, args);</span>
   };
 &nbsp;
-  i18n.__mf = <span class="fstat-no" title="function not covered" >function i18nMessageformat(phrase) {</span>
-<span class="cstat-no" title="statement not covered" >    var msg, mf, f;</span>
-<span class="cstat-no" title="statement not covered" >    var targetLocale = defaultLocale;</span>
-<span class="cstat-no" title="statement not covered" >    var argv = parseArgv(arguments);</span>
-<span class="cstat-no" title="statement not covered" >    var namedValues = argv[0];</span>
-<span class="cstat-no" title="statement not covered" >    var args = argv[1];</span>
+  i18n.__mf = <span class="fstat-no" title="function not covered">function i18nMessageformat(phrase) {</span>
+<span class="cstat-no" title="statement not covered">    var msg, mf, f;</span>
+<span class="cstat-no" title="statement not covered">    var targetLocale = defaultLocale;</span>
+<span class="cstat-no" title="statement not covered">    var argv = parseArgv(arguments);</span>
+<span class="cstat-no" title="statement not covered">    var namedValues = argv[0];</span>
+<span class="cstat-no" title="statement not covered">    var args = argv[1];</span>
 &nbsp;
     // called like __({phrase: "Hello", locale: "en"})
-<span class="cstat-no" title="statement not covered" >    if (typeof phrase === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      if (typeof phrase.locale === 'string' &amp;&amp; typeof phrase.phrase === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >        msg = phrase.phrase;</span>
-<span class="cstat-no" title="statement not covered" >        targetLocale = phrase.locale;</span>
+<span class="cstat-no" title="statement not covered">    if (typeof phrase === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      if (typeof phrase.locale === 'string' &amp;&amp; typeof phrase.phrase === 'string') {</span>
+<span class="cstat-no" title="statement not covered">        msg = phrase.phrase;</span>
+<span class="cstat-no" title="statement not covered">        targetLocale = phrase.locale;</span>
       }
     }
     // called like __("Hello")
     else {
       // get translated message with locale from scope (deprecated) or object
-<span class="cstat-no" title="statement not covered" >      msg = phrase;</span>
-<span class="cstat-no" title="statement not covered" >      targetLocale = getLocaleFromObject(this);</span>
+<span class="cstat-no" title="statement not covered">      msg = phrase;</span>
+<span class="cstat-no" title="statement not covered">      targetLocale = getLocaleFromObject(this);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    msg = translate(targetLocale, msg);</span>
+<span class="cstat-no" title="statement not covered">    msg = translate(targetLocale, msg);</span>
     // --- end get msg
 &nbsp;
     // now head over to Messageformat
     // and try to cache instance
-<span class="cstat-no" title="statement not covered" >    if (MessageformatInstanceForLocale[targetLocale]) {</span>
-<span class="cstat-no" title="statement not covered" >      mf = MessageformatInstanceForLocale[targetLocale];</span>
+<span class="cstat-no" title="statement not covered">    if (MessageformatInstanceForLocale[targetLocale]) {</span>
+<span class="cstat-no" title="statement not covered">      mf = MessageformatInstanceForLocale[targetLocale];</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      mf = new Messageformat(targetLocale);</span>
-<span class="cstat-no" title="statement not covered" >      mf.compiledFunctions = {};</span>
-<span class="cstat-no" title="statement not covered" >      MessageformatInstanceForLocale[targetLocale] = mf;</span>
+<span class="cstat-no" title="statement not covered">      mf = new Messageformat(targetLocale);</span>
+<span class="cstat-no" title="statement not covered">      mf.compiledFunctions = {};</span>
+<span class="cstat-no" title="statement not covered">      MessageformatInstanceForLocale[targetLocale] = mf;</span>
     }
 &nbsp;
     // let's try to cache that function
-<span class="cstat-no" title="statement not covered" >    if (mf.compiledFunctions[msg]) {</span>
-<span class="cstat-no" title="statement not covered" >      f = mf.compiledFunctions[msg];</span>
+<span class="cstat-no" title="statement not covered">    if (mf.compiledFunctions[msg]) {</span>
+<span class="cstat-no" title="statement not covered">      f = mf.compiledFunctions[msg];</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      f = mf.compile(msg);</span>
-<span class="cstat-no" title="statement not covered" >      mf.compiledFunctions[msg] = f;</span>
+<span class="cstat-no" title="statement not covered">      f = mf.compile(msg);</span>
+<span class="cstat-no" title="statement not covered">      mf.compiledFunctions[msg] = f;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return postProcess(f(namedValues), namedValues, args);</span>
+<span class="cstat-no" title="statement not covered">    return postProcess(f(namedValues), namedValues, args);</span>
   };
 &nbsp;
-  i18n.__l = <span class="fstat-no" title="function not covered" >function i18nTranslationList(phrase) {</span>
-<span class="cstat-no" title="statement not covered" >    var translations = [];</span>
-<span class="cstat-no" title="statement not covered" >    Object.keys(locales).sort().forEach(<span class="fstat-no" title="function not covered" >function(l) {</span></span>
-<span class="cstat-no" title="statement not covered" >      translations.push(i18n.__({ phrase: phrase, locale: l }));</span>
+  i18n.__l = <span class="fstat-no" title="function not covered">function i18nTranslationList(phrase) {</span>
+<span class="cstat-no" title="statement not covered">    var translations = [];</span>
+<span class="cstat-no" title="statement not covered">    Object.keys(locales).sort().forEach(<span class="fstat-no" title="function not covered">function(l) {</span></span>
+<span class="cstat-no" title="statement not covered">      translations.push(i18n.__({ phrase: phrase, locale: l }));</span>
     });
-<span class="cstat-no" title="statement not covered" >    return translations;</span>
+<span class="cstat-no" title="statement not covered">    return translations;</span>
   };
 &nbsp;
-  i18n.__h = <span class="fstat-no" title="function not covered" >function i18nTranslationHash(phrase) {</span>
-<span class="cstat-no" title="statement not covered" >    var translations = [];</span>
-<span class="cstat-no" title="statement not covered" >    Object.keys(locales).sort().forEach(<span class="fstat-no" title="function not covered" >function(l) {</span></span>
-<span class="cstat-no" title="statement not covered" >      var hash = {};</span>
-<span class="cstat-no" title="statement not covered" >      hash[l] = i18n.__({ phrase: phrase, locale: l });</span>
-<span class="cstat-no" title="statement not covered" >      translations.push(hash);</span>
+  i18n.__h = <span class="fstat-no" title="function not covered">function i18nTranslationHash(phrase) {</span>
+<span class="cstat-no" title="statement not covered">    var translations = [];</span>
+<span class="cstat-no" title="statement not covered">    Object.keys(locales).sort().forEach(<span class="fstat-no" title="function not covered">function(l) {</span></span>
+<span class="cstat-no" title="statement not covered">      var hash = {};</span>
+<span class="cstat-no" title="statement not covered">      hash[l] = i18n.__({ phrase: phrase, locale: l });</span>
+<span class="cstat-no" title="statement not covered">      translations.push(hash);</span>
     });
-<span class="cstat-no" title="statement not covered" >    return translations;</span>
+<span class="cstat-no" title="statement not covered">    return translations;</span>
   };
 &nbsp;
-  i18n.__n = <span class="fstat-no" title="function not covered" >function i18nTranslatePlural(singular, plural, count) {</span>
-<span class="cstat-no" title="statement not covered" >    var msg, namedValues, targetLocale, args = [];</span>
+  i18n.__n = <span class="fstat-no" title="function not covered">function i18nTranslatePlural(singular, plural, count) {</span>
+<span class="cstat-no" title="statement not covered">    var msg, namedValues, targetLocale, args = [];</span>
 &nbsp;
     // Accept an object with named values as the last parameter
-<span class="cstat-no" title="statement not covered" >    if (argsEndWithNamedObject(arguments)) {</span>
-<span class="cstat-no" title="statement not covered" >      namedValues = arguments[arguments.length - 1];</span>
-<span class="cstat-no" title="statement not covered" >      args = arguments.length &gt;= 5 ? Array.prototype.slice.call(arguments, 3, -1) : [];</span>
+<span class="cstat-no" title="statement not covered">    if (argsEndWithNamedObject(arguments)) {</span>
+<span class="cstat-no" title="statement not covered">      namedValues = arguments[arguments.length - 1];</span>
+<span class="cstat-no" title="statement not covered">      args = arguments.length &gt;= 5 ? Array.prototype.slice.call(arguments, 3, -1) : [];</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      namedValues = {};</span>
-<span class="cstat-no" title="statement not covered" >      args = arguments.length &gt;= 4 ? Array.prototype.slice.call(arguments, 3) : [];</span>
+<span class="cstat-no" title="statement not covered">      namedValues = {};</span>
+<span class="cstat-no" title="statement not covered">      args = arguments.length &gt;= 4 ? Array.prototype.slice.call(arguments, 3) : [];</span>
     }
 &nbsp;
     // called like __n({singular: "%s cat", plural: "%s cats", locale: "en"}, 3)
-<span class="cstat-no" title="statement not covered" >    if (typeof singular === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      if (</span>
+<span class="cstat-no" title="statement not covered">    if (typeof singular === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      if (</span>
         typeof singular.locale === 'string' &amp;&amp;
         typeof singular.singular === 'string' &amp;&amp;
         typeof singular.plural === 'string'
       ) {
-<span class="cstat-no" title="statement not covered" >        targetLocale = singular.locale;</span>
-<span class="cstat-no" title="statement not covered" >        msg = translate(singular.locale, singular.singular, singular.plural);</span>
+<span class="cstat-no" title="statement not covered">        targetLocale = singular.locale;</span>
+<span class="cstat-no" title="statement not covered">        msg = translate(singular.locale, singular.singular, singular.plural);</span>
       }
-<span class="cstat-no" title="statement not covered" >      args.unshift(count);</span>
+<span class="cstat-no" title="statement not covered">      args.unshift(count);</span>
 &nbsp;
       // some template engines pass all values as strings -&gt; so we try to convert them to numbers
-<span class="cstat-no" title="statement not covered" >      if (typeof plural === 'number' || parseInt(plural, 10) + '' === plural) {</span>
-<span class="cstat-no" title="statement not covered" >        count = plural;</span>
+<span class="cstat-no" title="statement not covered">      if (typeof plural === 'number' || parseInt(plural, 10) + '' === plural) {</span>
+<span class="cstat-no" title="statement not covered">        count = plural;</span>
       }
 &nbsp;
       // called like __n({singular: "%s cat", plural: "%s cats", locale: "en", count: 3})
-<span class="cstat-no" title="statement not covered" >      if (typeof singular.count === 'number' || typeof singular.count === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >        count = singular.count;</span>
-<span class="cstat-no" title="statement not covered" >        args.unshift(plural);</span>
+<span class="cstat-no" title="statement not covered">      if (typeof singular.count === 'number' || typeof singular.count === 'string') {</span>
+<span class="cstat-no" title="statement not covered">        count = singular.count;</span>
+<span class="cstat-no" title="statement not covered">        args.unshift(plural);</span>
       }
     } else {
       // called like  __n('cat', 3)
-<span class="cstat-no" title="statement not covered" >      if (typeof plural === 'number' || parseInt(plural, 10) + '' === plural) {</span>
-<span class="cstat-no" title="statement not covered" >        count = plural;</span>
+<span class="cstat-no" title="statement not covered">      if (typeof plural === 'number' || parseInt(plural, 10) + '' === plural) {</span>
+<span class="cstat-no" title="statement not covered">        count = plural;</span>
 &nbsp;
         // we add same string as default
         // which efectivly copies the key to the plural.value
         // this is for initialization of new empty translations
-<span class="cstat-no" title="statement not covered" >        plural = singular;</span>
+<span class="cstat-no" title="statement not covered">        plural = singular;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        args.unshift(count);</span>
-<span class="cstat-no" title="statement not covered" >        args.unshift(plural);</span>
+<span class="cstat-no" title="statement not covered">        args.unshift(count);</span>
+<span class="cstat-no" title="statement not covered">        args.unshift(plural);</span>
       }
       // called like __n('%s cat', '%s cats', 3)
       // get translated message with locale from scope (deprecated) or object
-<span class="cstat-no" title="statement not covered" >      msg = translate(getLocaleFromObject(this), singular, plural);</span>
-<span class="cstat-no" title="statement not covered" >      targetLocale = getLocaleFromObject(this);</span>
+<span class="cstat-no" title="statement not covered">      msg = translate(getLocaleFromObject(this), singular, plural);</span>
+<span class="cstat-no" title="statement not covered">      targetLocale = getLocaleFromObject(this);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (count === null) <span class="cstat-no" title="statement not covered" >count = namedValues.count;</span></span>
+<span class="cstat-no" title="statement not covered">    if (count === null) <span class="cstat-no" title="statement not covered">count = namedValues.count;</span></span>
 &nbsp;
     // enforce number
-<span class="cstat-no" title="statement not covered" >    count = parseInt(count, 10);</span>
+<span class="cstat-no" title="statement not covered">    count = parseInt(count, 10);</span>
 &nbsp;
     // find the correct plural rule for given locale
-<span class="cstat-no" title="statement not covered" >    if (typeof msg === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      var p;</span>
+<span class="cstat-no" title="statement not covered">    if (typeof msg === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      var p;</span>
       // create a new Plural for locale
       // and try to cache instance
-<span class="cstat-no" title="statement not covered" >      if (PluralsForLocale[targetLocale]) {</span>
-<span class="cstat-no" title="statement not covered" >        p = PluralsForLocale[targetLocale];</span>
+<span class="cstat-no" title="statement not covered">      if (PluralsForLocale[targetLocale]) {</span>
+<span class="cstat-no" title="statement not covered">        p = PluralsForLocale[targetLocale];</span>
       } else {
         // split locales with a region code
-<span class="cstat-no" title="statement not covered" >        var lc = targetLocale.toLowerCase().split(/[_-\s]+/)</span>
-          .filter(<span class="fstat-no" title="function not covered" >function(el){</span> <span class="cstat-no" title="statement not covered" >return true &amp;&amp; el; </span>});
+<span class="cstat-no" title="statement not covered">        var lc = targetLocale.toLowerCase().split(/[_-\s]+/)</span>
+          .filter(<span class="fstat-no" title="function not covered">function(el){</span> <span class="cstat-no" title="statement not covered">return true &amp;&amp; el; </span>});
         // take the first part of locale, fallback to full locale
-<span class="cstat-no" title="statement not covered" >        p = new MakePlural(lc[0] || targetLocale);</span>
-<span class="cstat-no" title="statement not covered" >        PluralsForLocale[targetLocale] = p;</span>
+<span class="cstat-no" title="statement not covered">        p = new MakePlural(lc[0] || targetLocale);</span>
+<span class="cstat-no" title="statement not covered">        PluralsForLocale[targetLocale] = p;</span>
       }
 &nbsp;
       // fallback to 'other' on case of missing translations
-<span class="cstat-no" title="statement not covered" >      msg = msg[p(count)] || msg.other;</span>
+<span class="cstat-no" title="statement not covered">      msg = msg[p(count)] || msg.other;</span>
     }
 &nbsp;
     // head over to postProcessing
-<span class="cstat-no" title="statement not covered" >    return postProcess(msg, namedValues, args, count);</span>
+<span class="cstat-no" title="statement not covered">    return postProcess(msg, namedValues, args, count);</span>
   };
 &nbsp;
-  i18n.setLocale = <span class="fstat-no" title="function not covered" >function i18nSetLocale(object, locale, skipImplicitObjects) {</span>
+  i18n.setLocale = <span class="fstat-no" title="function not covered">function i18nSetLocale(object, locale, skipImplicitObjects) {</span>
 &nbsp;
     // when given an array of objects =&gt; setLocale on each
-<span class="cstat-no" title="statement not covered" >    if (Array.isArray(object) &amp;&amp; typeof locale === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >      for (var i = object.length - 1; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >        i18n.setLocale(object[i], locale, true);</span>
+<span class="cstat-no" title="statement not covered">    if (Array.isArray(object) &amp;&amp; typeof locale === 'string') {</span>
+<span class="cstat-no" title="statement not covered">      for (var i = object.length - 1; i &gt;= 0; i--) {</span>
+<span class="cstat-no" title="statement not covered">        i18n.setLocale(object[i], locale, true);</span>
       }
-<span class="cstat-no" title="statement not covered" >      return i18n.getLocale(object[0]);</span>
+<span class="cstat-no" title="statement not covered">      return i18n.getLocale(object[0]);</span>
     }
 &nbsp;
     // defaults to called like i18n.setLocale(req, 'en')
-<span class="cstat-no" title="statement not covered" >    var targetObject = object;</span>
-<span class="cstat-no" title="statement not covered" >    var targetLocale = locale;</span>
+<span class="cstat-no" title="statement not covered">    var targetObject = object;</span>
+<span class="cstat-no" title="statement not covered">    var targetLocale = locale;</span>
 &nbsp;
     // called like req.setLocale('en') or i18n.setLocale('en')
-<span class="cstat-no" title="statement not covered" >    if (locale === undefined &amp;&amp; typeof object === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >      targetObject = this;</span>
-<span class="cstat-no" title="statement not covered" >      targetLocale = object;</span>
+<span class="cstat-no" title="statement not covered">    if (locale === undefined &amp;&amp; typeof object === 'string') {</span>
+<span class="cstat-no" title="statement not covered">      targetObject = this;</span>
+<span class="cstat-no" title="statement not covered">      targetLocale = object;</span>
     }
 &nbsp;
     // consider a fallback
-<span class="cstat-no" title="statement not covered" >    if (!locales[targetLocale] &amp;&amp; fallbacks[targetLocale]) {</span>
-<span class="cstat-no" title="statement not covered" >      targetLocale = fallbacks[targetLocale];</span>
+<span class="cstat-no" title="statement not covered">    if (!locales[targetLocale] &amp;&amp; fallbacks[targetLocale]) {</span>
+<span class="cstat-no" title="statement not covered">      targetLocale = fallbacks[targetLocale];</span>
     }
 &nbsp;
     // now set locale on object
-<span class="cstat-no" title="statement not covered" >    targetObject.locale = locales[targetLocale] ? targetLocale : defaultLocale;</span>
+<span class="cstat-no" title="statement not covered">    targetObject.locale = locales[targetLocale] ? targetLocale : defaultLocale;</span>
 &nbsp;
     // consider any extra registered objects
-<span class="cstat-no" title="statement not covered" >    if (typeof register === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      if (Array.isArray(register) &amp;&amp; !skipImplicitObjects) {</span>
-<span class="cstat-no" title="statement not covered" >        register.forEach(<span class="fstat-no" title="function not covered" >function(r) {</span></span>
-<span class="cstat-no" title="statement not covered" >          r.locale = targetObject.locale;</span>
+<span class="cstat-no" title="statement not covered">    if (typeof register === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      if (Array.isArray(register) &amp;&amp; !skipImplicitObjects) {</span>
+<span class="cstat-no" title="statement not covered">        register.forEach(<span class="fstat-no" title="function not covered">function(r) {</span></span>
+<span class="cstat-no" title="statement not covered">          r.locale = targetObject.locale;</span>
         });
       } else {
-<span class="cstat-no" title="statement not covered" >        register.locale = targetObject.locale;</span>
+<span class="cstat-no" title="statement not covered">        register.locale = targetObject.locale;</span>
       }
     }
 &nbsp;
     // consider res
-<span class="cstat-no" title="statement not covered" >    if (targetObject.res &amp;&amp; !skipImplicitObjects) {</span>
+<span class="cstat-no" title="statement not covered">    if (targetObject.res &amp;&amp; !skipImplicitObjects) {</span>
 &nbsp;
       // escape recursion
       // @see  - https://github.com/balderdashy/sails/pull/3631
       //       - https://github.com/mashpie/i18n-node/pull/218
-<span class="cstat-no" title="statement not covered" >      if (targetObject.res.locals) {</span>
-<span class="cstat-no" title="statement not covered" >        i18n.setLocale(targetObject.res, targetObject.locale, true);</span>
-<span class="cstat-no" title="statement not covered" >        i18n.setLocale(targetObject.res.locals, targetObject.locale, true);</span>
+<span class="cstat-no" title="statement not covered">      if (targetObject.res.locals) {</span>
+<span class="cstat-no" title="statement not covered">        i18n.setLocale(targetObject.res, targetObject.locale, true);</span>
+<span class="cstat-no" title="statement not covered">        i18n.setLocale(targetObject.res.locals, targetObject.locale, true);</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        i18n.setLocale(targetObject.res, targetObject.locale);</span>
+<span class="cstat-no" title="statement not covered">        i18n.setLocale(targetObject.res, targetObject.locale);</span>
       }
     }
 &nbsp;
     // consider locals
-<span class="cstat-no" title="statement not covered" >    if (targetObject.locals &amp;&amp; !skipImplicitObjects) {</span>
+<span class="cstat-no" title="statement not covered">    if (targetObject.locals &amp;&amp; !skipImplicitObjects) {</span>
 &nbsp;
       // escape recursion
       // @see  - https://github.com/balderdashy/sails/pull/3631
       //       - https://github.com/mashpie/i18n-node/pull/218
-<span class="cstat-no" title="statement not covered" >      if (targetObject.locals.res) {</span>
-<span class="cstat-no" title="statement not covered" >        i18n.setLocale(targetObject.locals, targetObject.locale, true);</span>
-<span class="cstat-no" title="statement not covered" >        i18n.setLocale(targetObject.locals.res, targetObject.locale, true);</span>
+<span class="cstat-no" title="statement not covered">      if (targetObject.locals.res) {</span>
+<span class="cstat-no" title="statement not covered">        i18n.setLocale(targetObject.locals, targetObject.locale, true);</span>
+<span class="cstat-no" title="statement not covered">        i18n.setLocale(targetObject.locals.res, targetObject.locale, true);</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        i18n.setLocale(targetObject.locals, targetObject.locale);</span>
+<span class="cstat-no" title="statement not covered">        i18n.setLocale(targetObject.locals, targetObject.locale);</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return i18n.getLocale(targetObject);</span>
+<span class="cstat-no" title="statement not covered">    return i18n.getLocale(targetObject);</span>
   };
 &nbsp;
-  i18n.getLocale = <span class="fstat-no" title="function not covered" >function i18nGetLocale(request) {</span>
+  i18n.getLocale = <span class="fstat-no" title="function not covered">function i18nGetLocale(request) {</span>
 &nbsp;
     // called like i18n.getLocale(req)
-<span class="cstat-no" title="statement not covered" >    if (request &amp;&amp; request.locale) {</span>
-<span class="cstat-no" title="statement not covered" >      return request.locale;</span>
+<span class="cstat-no" title="statement not covered">    if (request &amp;&amp; request.locale) {</span>
+<span class="cstat-no" title="statement not covered">      return request.locale;</span>
     }
 &nbsp;
     // called like req.getLocale()
-<span class="cstat-no" title="statement not covered" >    return this.locale || defaultLocale;</span>
+<span class="cstat-no" title="statement not covered">    return this.locale || defaultLocale;</span>
   };
 &nbsp;
-  i18n.getCatalog = <span class="fstat-no" title="function not covered" >function i18nGetCatalog(object, locale) {</span>
-<span class="cstat-no" title="statement not covered" >    var targetLocale;</span>
+  i18n.getCatalog = <span class="fstat-no" title="function not covered">function i18nGetCatalog(object, locale) {</span>
+<span class="cstat-no" title="statement not covered">    var targetLocale;</span>
 &nbsp;
     // called like i18n.getCatalog(req)
-<span class="cstat-no" title="statement not covered" >    if (typeof object === 'object' &amp;&amp; typeof object.locale === 'string' &amp;&amp; locale === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >      targetLocale = object.locale;</span>
+<span class="cstat-no" title="statement not covered">    if (typeof object === 'object' &amp;&amp; typeof object.locale === 'string' &amp;&amp; locale === undefined) {</span>
+<span class="cstat-no" title="statement not covered">      targetLocale = object.locale;</span>
     }
 &nbsp;
     // called like i18n.getCatalog(req, 'en')
-<span class="cstat-no" title="statement not covered" >    if (!targetLocale &amp;&amp; typeof object === 'object' &amp;&amp; typeof locale === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >      targetLocale = locale;</span>
+<span class="cstat-no" title="statement not covered">    if (!targetLocale &amp;&amp; typeof object === 'object' &amp;&amp; typeof locale === 'string') {</span>
+<span class="cstat-no" title="statement not covered">      targetLocale = locale;</span>
     }
 &nbsp;
     // called like req.getCatalog('en')
-<span class="cstat-no" title="statement not covered" >    if (!targetLocale &amp;&amp; locale === undefined &amp;&amp; typeof object === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >      targetLocale = object;</span>
+<span class="cstat-no" title="statement not covered">    if (!targetLocale &amp;&amp; locale === undefined &amp;&amp; typeof object === 'string') {</span>
+<span class="cstat-no" title="statement not covered">      targetLocale = object;</span>
     }
 &nbsp;
     // called like req.getCatalog()
-<span class="cstat-no" title="statement not covered" >    if (!targetLocale &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered">    if (!targetLocale &amp;&amp;</span>
       object === undefined &amp;&amp;
       locale === undefined &amp;&amp;
       typeof this.locale === 'string'
     ) {
-<span class="cstat-no" title="statement not covered" >      if (register &amp;&amp; register.GLOBAL) {</span>
-<span class="cstat-no" title="statement not covered" >        targetLocale = '';</span>
+<span class="cstat-no" title="statement not covered">      if (register &amp;&amp; register.GLOBAL) {</span>
+<span class="cstat-no" title="statement not covered">        targetLocale = '';</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        targetLocale = this.locale;</span>
+<span class="cstat-no" title="statement not covered">        targetLocale = this.locale;</span>
       }
     }
 &nbsp;
     // called like i18n.getCatalog()
-<span class="cstat-no" title="statement not covered" >    if (targetLocale === undefined || targetLocale === '') {</span>
-<span class="cstat-no" title="statement not covered" >      return locales;</span>
+<span class="cstat-no" title="statement not covered">    if (targetLocale === undefined || targetLocale === '') {</span>
+<span class="cstat-no" title="statement not covered">      return locales;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!locales[targetLocale] &amp;&amp; fallbacks[targetLocale]) {</span>
-<span class="cstat-no" title="statement not covered" >      targetLocale = fallbacks[targetLocale];</span>
+<span class="cstat-no" title="statement not covered">    if (!locales[targetLocale] &amp;&amp; fallbacks[targetLocale]) {</span>
+<span class="cstat-no" title="statement not covered">      targetLocale = fallbacks[targetLocale];</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (locales[targetLocale]) {</span>
-<span class="cstat-no" title="statement not covered" >      return locales[targetLocale];</span>
+<span class="cstat-no" title="statement not covered">    if (locales[targetLocale]) {</span>
+<span class="cstat-no" title="statement not covered">      return locales[targetLocale];</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      logWarn('No catalog found for "' + targetLocale + '"');</span>
-<span class="cstat-no" title="statement not covered" >      return false;</span>
+<span class="cstat-no" title="statement not covered">      logWarn('No catalog found for "' + targetLocale + '"');</span>
+<span class="cstat-no" title="statement not covered">      return false;</span>
     }
   };
 &nbsp;
-  i18n.getLocales = <span class="fstat-no" title="function not covered" >function i18nGetLocales() {</span>
-<span class="cstat-no" title="statement not covered" >    return Object.keys(locales);</span>
+  i18n.getLocales = <span class="fstat-no" title="function not covered">function i18nGetLocales() {</span>
+<span class="cstat-no" title="statement not covered">    return Object.keys(locales);</span>
   };
 &nbsp;
-  i18n.addLocale = <span class="fstat-no" title="function not covered" >function i18nAddLocale(locale) {</span>
-<span class="cstat-no" title="statement not covered" >    read(locale);</span>
+  i18n.addLocale = <span class="fstat-no" title="function not covered">function i18nAddLocale(locale) {</span>
+<span class="cstat-no" title="statement not covered">    read(locale);</span>
   };
 &nbsp;
-  i18n.removeLocale = <span class="fstat-no" title="function not covered" >function i18nRemoveLocale(locale) {</span>
-<span class="cstat-no" title="statement not covered" >    delete locales[locale];</span>
+  i18n.removeLocale = <span class="fstat-no" title="function not covered">function i18nRemoveLocale(locale) {</span>
+<span class="cstat-no" title="statement not covered">    delete locales[locale];</span>
   };
 &nbsp;
   // ===================
   // = private methods =
   // ===================
 &nbsp;
-  var postProcess = <span class="fstat-no" title="function not covered" >function(msg, namedValues, args, count) {</span>
+  var postProcess = <span class="fstat-no" title="function not covered">function(msg, namedValues, args, count) {</span>
 &nbsp;
     // test for parsable interval string
-<span class="cstat-no" title="statement not covered" >    if ((/\|/).test(msg)) {</span>
-<span class="cstat-no" title="statement not covered" >      msg = parsePluralInterval(msg, count);</span>
+<span class="cstat-no" title="statement not covered">    if ((/\|/).test(msg)) {</span>
+<span class="cstat-no" title="statement not covered">      msg = parsePluralInterval(msg, count);</span>
     }
 &nbsp;
     // replace the counter
-<span class="cstat-no" title="statement not covered" >    if (typeof count === 'number') {</span>
-<span class="cstat-no" title="statement not covered" >      msg = vsprintf(msg, [parseInt(count, 10)]);</span>
+<span class="cstat-no" title="statement not covered">    if (typeof count === 'number') {</span>
+<span class="cstat-no" title="statement not covered">      msg = vsprintf(msg, [parseInt(count, 10)]);</span>
     }
 &nbsp;
     // if the msg string contains {{Mustache}} patterns we render it as a mini tempalate
-<span class="cstat-no" title="statement not covered" >    if ((/{{.*}}/).test(msg)) {</span>
-<span class="cstat-no" title="statement not covered" >      msg = Mustache.render(msg, namedValues);</span>
+<span class="cstat-no" title="statement not covered">    if ((/{{.*}}/).test(msg)) {</span>
+<span class="cstat-no" title="statement not covered">      msg = Mustache.render(msg, namedValues);</span>
     }
 &nbsp;
     // if we have extra arguments with values to get replaced,
     // an additional substition injects those strings afterwards
-<span class="cstat-no" title="statement not covered" >    if ((/%/).test(msg) &amp;&amp; args &amp;&amp; args.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      msg = vsprintf(msg, args);</span>
+<span class="cstat-no" title="statement not covered">    if ((/%/).test(msg) &amp;&amp; args &amp;&amp; args.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">      msg = vsprintf(msg, args);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return msg;</span>
+<span class="cstat-no" title="statement not covered">    return msg;</span>
   };
 &nbsp;
-  var argsEndWithNamedObject = <span class="fstat-no" title="function not covered" >function(args) {</span>
-<span class="cstat-no" title="statement not covered" >    return (args.length &gt; 1 &amp;&amp;</span>
+  var argsEndWithNamedObject = <span class="fstat-no" title="function not covered">function(args) {</span>
+<span class="cstat-no" title="statement not covered">    return (args.length &gt; 1 &amp;&amp;</span>
       args[args.length - 1] !== null &amp;&amp;
       typeof args[args.length - 1] === 'object');
   };
 &nbsp;
-  var parseArgv = <span class="fstat-no" title="function not covered" >function(args) {</span>
-<span class="cstat-no" title="statement not covered" >    var namedValues, returnArgs;</span>
+  var parseArgv = <span class="fstat-no" title="function not covered">function(args) {</span>
+<span class="cstat-no" title="statement not covered">    var namedValues, returnArgs;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (argsEndWithNamedObject(args)) {</span>
-<span class="cstat-no" title="statement not covered" >      namedValues = args[args.length - 1];</span>
-<span class="cstat-no" title="statement not covered" >      returnArgs = Array.prototype.slice.call(args, 1, -1);</span>
+<span class="cstat-no" title="statement not covered">    if (argsEndWithNamedObject(args)) {</span>
+<span class="cstat-no" title="statement not covered">      namedValues = args[args.length - 1];</span>
+<span class="cstat-no" title="statement not covered">      returnArgs = Array.prototype.slice.call(args, 1, -1);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      namedValues = {};</span>
-<span class="cstat-no" title="statement not covered" >      returnArgs = args.length &gt;= 2 ? Array.prototype.slice.call(args, 1) : [];</span>
+<span class="cstat-no" title="statement not covered">      namedValues = {};</span>
+<span class="cstat-no" title="statement not covered">      returnArgs = args.length &gt;= 2 ? Array.prototype.slice.call(args, 1) : [];</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return [namedValues, returnArgs];</span>
+<span class="cstat-no" title="statement not covered">    return [namedValues, returnArgs];</span>
   };
 &nbsp;
   /**
    * registers all public API methods to a given response object when not already declared
    */
-  var applyAPItoObject = <span class="fstat-no" title="function not covered" >function(object) {</span>
+  var applyAPItoObject = <span class="fstat-no" title="function not covered">function(object) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var alreadySetted = true;</span>
+<span class="cstat-no" title="statement not covered">    var alreadySetted = true;</span>
 &nbsp;
     // attach to itself if not provided
-<span class="cstat-no" title="statement not covered" >    for (var method in api) {</span>
-<span class="cstat-no" title="statement not covered" >      if (api.hasOwnProperty(method)) {</span>
-<span class="cstat-no" title="statement not covered" >        var alias = api[method];</span>
+<span class="cstat-no" title="statement not covered">    for (var method in api) {</span>
+<span class="cstat-no" title="statement not covered">      if (api.hasOwnProperty(method)) {</span>
+<span class="cstat-no" title="statement not covered">        var alias = api[method];</span>
 &nbsp;
         // be kind rewind, or better not touch anything already existing
-<span class="cstat-no" title="statement not covered" >        if (!object[alias]) {</span>
-<span class="cstat-no" title="statement not covered" >          alreadySetted = false;</span>
-<span class="cstat-no" title="statement not covered" >          object[alias] = i18n[method].bind(object);</span>
+<span class="cstat-no" title="statement not covered">        if (!object[alias]) {</span>
+<span class="cstat-no" title="statement not covered">          alreadySetted = false;</span>
+<span class="cstat-no" title="statement not covered">          object[alias] = i18n[method].bind(object);</span>
         }
       }
     }
 &nbsp;
     // set initial locale if not set
-<span class="cstat-no" title="statement not covered" >    if (!object.locale) {</span>
-<span class="cstat-no" title="statement not covered" >      object.locale = defaultLocale;</span>
+<span class="cstat-no" title="statement not covered">    if (!object.locale) {</span>
+<span class="cstat-no" title="statement not covered">      object.locale = defaultLocale;</span>
     }
 &nbsp;
     // escape recursion
-<span class="cstat-no" title="statement not covered" >    if (alreadySetted) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered">    if (alreadySetted) {</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
     }
 &nbsp;
     // attach to response if present (ie. in express)
-<span class="cstat-no" title="statement not covered" >    if (object.res) {</span>
-<span class="cstat-no" title="statement not covered" >      applyAPItoObject(object.res);</span>
+<span class="cstat-no" title="statement not covered">    if (object.res) {</span>
+<span class="cstat-no" title="statement not covered">      applyAPItoObject(object.res);</span>
     }
 &nbsp;
     // attach to locals if present (ie. in express)
-<span class="cstat-no" title="statement not covered" >    if (object.locals) {</span>
-<span class="cstat-no" title="statement not covered" >      applyAPItoObject(object.locals);</span>
+<span class="cstat-no" title="statement not covered">    if (object.locals) {</span>
+<span class="cstat-no" title="statement not covered">      applyAPItoObject(object.locals);</span>
     }
   };
 &nbsp;
   /**
    * tries to guess locales by scanning the given directory
    */
-  var guessLocales = <span class="fstat-no" title="function not covered" >function(directory) {</span>
-<span class="cstat-no" title="statement not covered" >    var entries = fs.readdirSync(directory);</span>
-<span class="cstat-no" title="statement not covered" >    var localesFound = [];</span>
+  var guessLocales = <span class="fstat-no" title="function not covered">function(directory) {</span>
+<span class="cstat-no" title="statement not covered">    var entries = fs.readdirSync(directory);</span>
+<span class="cstat-no" title="statement not covered">    var localesFound = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    for (var i = entries.length - 1; i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >      if (entries[i].match(/^\./)) <span class="cstat-no" title="statement not covered" >continue;</span></span>
-<span class="cstat-no" title="statement not covered" >      var localeFromFile = guessLocaleFromFile(entries[i]);</span>
-<span class="cstat-no" title="statement not covered" >      if (localeFromFile) <span class="cstat-no" title="statement not covered" >localesFound.push(localeFromFile);</span></span>
+<span class="cstat-no" title="statement not covered">    for (var i = entries.length - 1; i &gt;= 0; i--) {</span>
+<span class="cstat-no" title="statement not covered">      if (entries[i].match(/^\./)) <span class="cstat-no" title="statement not covered">continue;</span></span>
+<span class="cstat-no" title="statement not covered">      var localeFromFile = guessLocaleFromFile(entries[i]);</span>
+<span class="cstat-no" title="statement not covered">      if (localeFromFile) <span class="cstat-no" title="statement not covered">localesFound.push(localeFromFile);</span></span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return localesFound.sort();</span>
+<span class="cstat-no" title="statement not covered">    return localesFound.sort();</span>
   };
 &nbsp;
   /**
    * tries to guess locales from a given filename
    */
-  var guessLocaleFromFile = <span class="fstat-no" title="function not covered" >function(filename) {</span>
-<span class="cstat-no" title="statement not covered" >    var extensionRegex = new RegExp(extension + '$', 'g');</span>
-<span class="cstat-no" title="statement not covered" >    var prefixRegex = new RegExp('^' + prefix, 'g');</span>
+  var guessLocaleFromFile = <span class="fstat-no" title="function not covered">function(filename) {</span>
+<span class="cstat-no" title="statement not covered">    var extensionRegex = new RegExp(extension + '$', 'g');</span>
+<span class="cstat-no" title="statement not covered">    var prefixRegex = new RegExp('^' + prefix, 'g');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (prefix &amp;&amp; !filename.match(prefixRegex)) <span class="cstat-no" title="statement not covered" >return false;</span></span>
-<span class="cstat-no" title="statement not covered" >    if (extension &amp;&amp; !filename.match(extensionRegex)) <span class="cstat-no" title="statement not covered" >return false;</span></span>
-<span class="cstat-no" title="statement not covered" >    return filename.replace(prefix, '').replace(extensionRegex, '');</span>
+<span class="cstat-no" title="statement not covered">    if (prefix &amp;&amp; !filename.match(prefixRegex)) <span class="cstat-no" title="statement not covered">return false;</span></span>
+<span class="cstat-no" title="statement not covered">    if (extension &amp;&amp; !filename.match(extensionRegex)) <span class="cstat-no" title="statement not covered">return false;</span></span>
+<span class="cstat-no" title="statement not covered">    return filename.replace(prefix, '').replace(extensionRegex, '');</span>
   };
 &nbsp;
   /**
    * guess language setting based on http headers
    */
 &nbsp;
-  var guessLanguage = <span class="fstat-no" title="function not covered" >function(request) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof request === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >      var languageHeader = request.headers? request.headers['accept-language'] : undefined,</span>
+  var guessLanguage = <span class="fstat-no" title="function not covered">function(request) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof request === 'object') {</span>
+<span class="cstat-no" title="statement not covered">      var languageHeader = request.headers? request.headers['accept-language'] : undefined,</span>
         languages = [],
         regions = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      request.languages = [defaultLocale];</span>
-<span class="cstat-no" title="statement not covered" >      request.regions = [defaultLocale];</span>
-<span class="cstat-no" title="statement not covered" >      request.language = defaultLocale;</span>
-<span class="cstat-no" title="statement not covered" >      request.region = defaultLocale;</span>
+<span class="cstat-no" title="statement not covered">      request.languages = [defaultLocale];</span>
+<span class="cstat-no" title="statement not covered">      request.regions = [defaultLocale];</span>
+<span class="cstat-no" title="statement not covered">      request.language = defaultLocale;</span>
+<span class="cstat-no" title="statement not covered">      request.region = defaultLocale;</span>
 &nbsp;
       // a query parameter overwrites all
-<span class="cstat-no" title="statement not covered" >      if (queryParameter &amp;&amp; request.url) {</span>
-<span class="cstat-no" title="statement not covered" >        var urlObj = url.parse(request.url, true);</span>
-<span class="cstat-no" title="statement not covered" >        if (urlObj.query[queryParameter]) {</span>
-<span class="cstat-no" title="statement not covered" >          logDebug('Overriding locale from query: ' + urlObj.query[queryParameter]);</span>
-<span class="cstat-no" title="statement not covered" >          request.language = urlObj.query[queryParameter].toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >          return i18n.setLocale(request, request.language);</span>
+<span class="cstat-no" title="statement not covered">      if (queryParameter &amp;&amp; request.url) {</span>
+<span class="cstat-no" title="statement not covered">        var urlObj = url.parse(request.url, true);</span>
+<span class="cstat-no" title="statement not covered">        if (urlObj.query[queryParameter]) {</span>
+<span class="cstat-no" title="statement not covered">          logDebug('Overriding locale from query: ' + urlObj.query[queryParameter]);</span>
+<span class="cstat-no" title="statement not covered">          request.language = urlObj.query[queryParameter].toLowerCase();</span>
+<span class="cstat-no" title="statement not covered">          return i18n.setLocale(request, request.language);</span>
         }
       }
 &nbsp;
       // a cookie overwrites headers
-<span class="cstat-no" title="statement not covered" >      if (cookiename &amp;&amp; request.cookies &amp;&amp; request.cookies[cookiename]) {</span>
-<span class="cstat-no" title="statement not covered" >        request.language = request.cookies[cookiename];</span>
-<span class="cstat-no" title="statement not covered" >        return i18n.setLocale(request, request.language);</span>
+<span class="cstat-no" title="statement not covered">      if (cookiename &amp;&amp; request.cookies &amp;&amp; request.cookies[cookiename]) {</span>
+<span class="cstat-no" title="statement not covered">        request.language = request.cookies[cookiename];</span>
+<span class="cstat-no" title="statement not covered">        return i18n.setLocale(request, request.language);</span>
       }
 &nbsp;
       // 'accept-language' is the most common source
-<span class="cstat-no" title="statement not covered" >      if (languageHeader) {</span>
-<span class="cstat-no" title="statement not covered" >        var acceptedLanguages = getAcceptedLanguagesFromHeader(languageHeader),</span>
+<span class="cstat-no" title="statement not covered">      if (languageHeader) {</span>
+<span class="cstat-no" title="statement not covered">        var acceptedLanguages = getAcceptedLanguagesFromHeader(languageHeader),</span>
           match, fallbackMatch, fallback;
-<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; acceptedLanguages.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >          var lang = acceptedLanguages[i],</span>
+<span class="cstat-no" title="statement not covered">        for (var i = 0; i &lt; acceptedLanguages.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">          var lang = acceptedLanguages[i],</span>
             lr = lang.split('-', 2),
             parentLang = lr[0],
             region = lr[1];
 &nbsp;
           // Check if we have a configured fallback set for this language.
-<span class="cstat-no" title="statement not covered" >          if (fallbacks &amp;&amp; fallbacks[lang]) {</span>
-<span class="cstat-no" title="statement not covered" >            fallback = fallbacks[lang];</span>
+<span class="cstat-no" title="statement not covered">          if (fallbacks &amp;&amp; fallbacks[lang]) {</span>
+<span class="cstat-no" title="statement not covered">            fallback = fallbacks[lang];</span>
             // Fallbacks for languages should be inserted
             // where the original, unsupported language existed.
-<span class="cstat-no" title="statement not covered" >            var acceptedLanguageIndex = acceptedLanguages.indexOf(lang);</span>
-<span class="cstat-no" title="statement not covered" >            var fallbackIndex = acceptedLanguages.indexOf(fallback);</span>
-<span class="cstat-no" title="statement not covered" >            if(fallbackIndex &gt; -1) {</span>
-<span class="cstat-no" title="statement not covered" >              acceptedLanguages.splice(fallbackIndex, 1);</span>
+<span class="cstat-no" title="statement not covered">            var acceptedLanguageIndex = acceptedLanguages.indexOf(lang);</span>
+<span class="cstat-no" title="statement not covered">            var fallbackIndex = acceptedLanguages.indexOf(fallback);</span>
+<span class="cstat-no" title="statement not covered">            if(fallbackIndex &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered">              acceptedLanguages.splice(fallbackIndex, 1);</span>
             }
-<span class="cstat-no" title="statement not covered" >            acceptedLanguages.splice(acceptedLanguageIndex + 1, 0, fallback);</span>
+<span class="cstat-no" title="statement not covered">            acceptedLanguages.splice(acceptedLanguageIndex + 1, 0, fallback);</span>
           }
 &nbsp;
           // Check if we have a configured fallback set for the parent language of the locale.
-<span class="cstat-no" title="statement not covered" >          if (fallbacks &amp;&amp; fallbacks[parentLang]) {</span>
-<span class="cstat-no" title="statement not covered" >            fallback = fallbacks[parentLang];</span>
+<span class="cstat-no" title="statement not covered">          if (fallbacks &amp;&amp; fallbacks[parentLang]) {</span>
+<span class="cstat-no" title="statement not covered">            fallback = fallbacks[parentLang];</span>
             // Fallbacks for a parent language should be inserted
             // to the end of the list, so they're only picked
             // if there is no better match.
-<span class="cstat-no" title="statement not covered" >            if (acceptedLanguages.indexOf(fallback) &lt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >              acceptedLanguages.push(fallback);</span>
+<span class="cstat-no" title="statement not covered">            if (acceptedLanguages.indexOf(fallback) &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered">              acceptedLanguages.push(fallback);</span>
             }
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          if (languages.indexOf(parentLang) &lt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >            languages.push(parentLang.toLowerCase());</span>
+<span class="cstat-no" title="statement not covered">          if (languages.indexOf(parentLang) &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered">            languages.push(parentLang.toLowerCase());</span>
           }
-<span class="cstat-no" title="statement not covered" >          if (region) {</span>
-<span class="cstat-no" title="statement not covered" >            regions.push(region.toLowerCase());</span>
-          }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >          if (!match &amp;&amp; locales[lang]) {</span>
-<span class="cstat-no" title="statement not covered" >            match = lang;</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered">          if (region) {</span>
+<span class="cstat-no" title="statement not covered">            regions.push(region.toLowerCase());</span>
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          if (!fallbackMatch &amp;&amp; locales[parentLang]) {</span>
-<span class="cstat-no" title="statement not covered" >            fallbackMatch = parentLang;</span>
+<span class="cstat-no" title="statement not covered">          if (!match &amp;&amp; locales[lang]) {</span>
+<span class="cstat-no" title="statement not covered">            match = lang;</span>
+<span class="cstat-no" title="statement not covered">            break;</span>
+          }
+&nbsp;
+<span class="cstat-no" title="statement not covered">          if (!fallbackMatch &amp;&amp; locales[parentLang]) {</span>
+<span class="cstat-no" title="statement not covered">            fallbackMatch = parentLang;</span>
           }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        request.language = match || fallbackMatch || request.language;</span>
-<span class="cstat-no" title="statement not covered" >        request.region = regions[0] || request.region;</span>
-<span class="cstat-no" title="statement not covered" >        return i18n.setLocale(request, request.language);</span>
+<span class="cstat-no" title="statement not covered">        request.language = match || fallbackMatch || request.language;</span>
+<span class="cstat-no" title="statement not covered">        request.region = regions[0] || request.region;</span>
+<span class="cstat-no" title="statement not covered">        return i18n.setLocale(request, request.language);</span>
       }
     }
 &nbsp;
     // last resort: defaultLocale
-<span class="cstat-no" title="statement not covered" >    return i18n.setLocale(request, defaultLocale);</span>
+<span class="cstat-no" title="statement not covered">    return i18n.setLocale(request, defaultLocale);</span>
   };
 &nbsp;
   /**
    * Get a sorted list of accepted languages from the HTTP Accept-Language header
    */
-  var getAcceptedLanguagesFromHeader = <span class="fstat-no" title="function not covered" >function(header) {</span>
-<span class="cstat-no" title="statement not covered" >    var languages = header.split(','),</span>
+  var getAcceptedLanguagesFromHeader = <span class="fstat-no" title="function not covered">function(header) {</span>
+<span class="cstat-no" title="statement not covered">    var languages = header.split(','),</span>
       preferences = {};
-<span class="cstat-no" title="statement not covered" >    return languages.map(<span class="fstat-no" title="function not covered" >function parseLanguagePreference(item) {</span></span>
-<span class="cstat-no" title="statement not covered" >      var preferenceParts = item.trim().split(';q=');</span>
-<span class="cstat-no" title="statement not covered" >      if (preferenceParts.length &lt; 2) {</span>
-<span class="cstat-no" title="statement not covered" >        preferenceParts[1] = 1.0;</span>
+<span class="cstat-no" title="statement not covered">    return languages.map(<span class="fstat-no" title="function not covered">function parseLanguagePreference(item) {</span></span>
+<span class="cstat-no" title="statement not covered">      var preferenceParts = item.trim().split(';q=');</span>
+<span class="cstat-no" title="statement not covered">      if (preferenceParts.length &lt; 2) {</span>
+<span class="cstat-no" title="statement not covered">        preferenceParts[1] = 1.0;</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        var quality = parseFloat(preferenceParts[1]);</span>
-<span class="cstat-no" title="statement not covered" >        preferenceParts[1] = quality ? quality : 0.0;</span>
+<span class="cstat-no" title="statement not covered">        var quality = parseFloat(preferenceParts[1]);</span>
+<span class="cstat-no" title="statement not covered">        preferenceParts[1] = quality ? quality : 0.0;</span>
       }
-<span class="cstat-no" title="statement not covered" >      preferences[preferenceParts[0]] = preferenceParts[1];</span>
+<span class="cstat-no" title="statement not covered">      preferences[preferenceParts[0]] = preferenceParts[1];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return preferenceParts[0];</span>
-    }).filter(<span class="fstat-no" title="function not covered" >function(lang) {</span>
-<span class="cstat-no" title="statement not covered" >      return preferences[lang] &gt; 0;</span>
-    }).sort(<span class="fstat-no" title="function not covered" >function sortLanguages(a, b) {</span>
-<span class="cstat-no" title="statement not covered" >      return preferences[b] - preferences[a];</span>
+<span class="cstat-no" title="statement not covered">      return preferenceParts[0];</span>
+    }).filter(<span class="fstat-no" title="function not covered">function(lang) {</span>
+<span class="cstat-no" title="statement not covered">      return preferences[lang] &gt; 0;</span>
+    }).sort(<span class="fstat-no" title="function not covered">function sortLanguages(a, b) {</span>
+<span class="cstat-no" title="statement not covered">      return preferences[b] - preferences[a];</span>
     });
   };
 &nbsp;
@@ -3331,40 +3329,40 @@ module.exports = (function() {
    * searches for locale in given object
    */
 &nbsp;
-  var getLocaleFromObject = <span class="fstat-no" title="function not covered" >function(obj) {</span>
-<span class="cstat-no" title="statement not covered" >    var locale;</span>
-<span class="cstat-no" title="statement not covered" >    if (obj &amp;&amp; obj.scope) {</span>
-<span class="cstat-no" title="statement not covered" >      locale = obj.scope.locale;</span>
+  var getLocaleFromObject = <span class="fstat-no" title="function not covered">function(obj) {</span>
+<span class="cstat-no" title="statement not covered">    var locale;</span>
+<span class="cstat-no" title="statement not covered">    if (obj &amp;&amp; obj.scope) {</span>
+<span class="cstat-no" title="statement not covered">      locale = obj.scope.locale;</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (obj &amp;&amp; obj.locale) {</span>
-<span class="cstat-no" title="statement not covered" >      locale = obj.locale;</span>
+<span class="cstat-no" title="statement not covered">    if (obj &amp;&amp; obj.locale) {</span>
+<span class="cstat-no" title="statement not covered">      locale = obj.locale;</span>
     }
-<span class="cstat-no" title="statement not covered" >    return locale;</span>
+<span class="cstat-no" title="statement not covered">    return locale;</span>
   };
 &nbsp;
   /**
    * splits and parses a phrase for mathematical interval expressions
    */
-  var parsePluralInterval = <span class="fstat-no" title="function not covered" >function(phrase, count) {</span>
-<span class="cstat-no" title="statement not covered" >    var returnPhrase = phrase;</span>
-<span class="cstat-no" title="statement not covered" >    var phrases = phrase.split(/\|/);</span>
+  var parsePluralInterval = <span class="fstat-no" title="function not covered">function(phrase, count) {</span>
+<span class="cstat-no" title="statement not covered">    var returnPhrase = phrase;</span>
+<span class="cstat-no" title="statement not covered">    var phrases = phrase.split(/\|/);</span>
 &nbsp;
     // some() breaks on 1st true
-<span class="cstat-no" title="statement not covered" >    phrases.some(<span class="fstat-no" title="function not covered" >function(p) {</span></span>
-<span class="cstat-no" title="statement not covered" >      var matches = p.match(/^\s*([\(\)\[\]\d,]+)?\s*(.*)$/);</span>
+<span class="cstat-no" title="statement not covered">    phrases.some(<span class="fstat-no" title="function not covered">function(p) {</span></span>
+<span class="cstat-no" title="statement not covered">      var matches = p.match(/^\s*([\(\)\[\]\d,]+)?\s*(.*)$/);</span>
 &nbsp;
       // not the same as in combined condition
-<span class="cstat-no" title="statement not covered" >      if (matches[1]) {</span>
-<span class="cstat-no" title="statement not covered" >        if (matchInterval(count, matches[1]) === true) {</span>
-<span class="cstat-no" title="statement not covered" >          returnPhrase = matches[2];</span>
-<span class="cstat-no" title="statement not covered" >          return true;</span>
+<span class="cstat-no" title="statement not covered">      if (matches[1]) {</span>
+<span class="cstat-no" title="statement not covered">        if (matchInterval(count, matches[1]) === true) {</span>
+<span class="cstat-no" title="statement not covered">          returnPhrase = matches[2];</span>
+<span class="cstat-no" title="statement not covered">          return true;</span>
         }
       } else {
-<span class="cstat-no" title="statement not covered" >        returnPhrase = p;</span>
+<span class="cstat-no" title="statement not covered">        returnPhrase = p;</span>
       }
 &nbsp;
     });
-<span class="cstat-no" title="statement not covered" >    return returnPhrase;</span>
+<span class="cstat-no" title="statement not covered">    return returnPhrase;</span>
   };
 &nbsp;
   /**
@@ -3375,109 +3373,109 @@ module.exports = (function() {
    * [20,] - all numbers ≥20 (matches: 20, 21, 22, ...)
    * [,20] - all numbers ≤20 (matches: 20, 21, 22, ...)
    */
-  var matchInterval = <span class="fstat-no" title="function not covered" >function(number, interval) {</span>
-<span class="cstat-no" title="statement not covered" >    interval = parseInterval(interval);</span>
-<span class="cstat-no" title="statement not covered" >    if (interval &amp;&amp; typeof number === 'number') {</span>
-<span class="cstat-no" title="statement not covered" >      if (interval.from.value === number) {</span>
-<span class="cstat-no" title="statement not covered" >        return interval.from.included;</span>
+  var matchInterval = <span class="fstat-no" title="function not covered">function(number, interval) {</span>
+<span class="cstat-no" title="statement not covered">    interval = parseInterval(interval);</span>
+<span class="cstat-no" title="statement not covered">    if (interval &amp;&amp; typeof number === 'number') {</span>
+<span class="cstat-no" title="statement not covered">      if (interval.from.value === number) {</span>
+<span class="cstat-no" title="statement not covered">        return interval.from.included;</span>
       }
-<span class="cstat-no" title="statement not covered" >      if (interval.to.value === number) {</span>
-<span class="cstat-no" title="statement not covered" >        return interval.to.included;</span>
+<span class="cstat-no" title="statement not covered">      if (interval.to.value === number) {</span>
+<span class="cstat-no" title="statement not covered">        return interval.to.included;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return (Math.min(interval.from.value, number) === interval.from.value &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered">      return (Math.min(interval.from.value, number) === interval.from.value &amp;&amp;</span>
         Math.max(interval.to.value, number) === interval.to.value);
     }
-<span class="cstat-no" title="statement not covered" >    return false;</span>
+<span class="cstat-no" title="statement not covered">    return false;</span>
   };
 &nbsp;
   /**
    * read locale file, translate a msg and write to fs if new
    */
-  var translate = <span class="fstat-no" title="function not covered" >function(locale, singular, plural, skipSyncToAllFiles) {</span>
+  var translate = <span class="fstat-no" title="function not covered">function(locale, singular, plural, skipSyncToAllFiles) {</span>
 &nbsp;
     // add same key to all translations
-<span class="cstat-no" title="statement not covered" >    if (!skipSyncToAllFiles &amp;&amp; syncFiles) {</span>
-<span class="cstat-no" title="statement not covered" >      syncToAllFiles(singular, plural);</span>
+<span class="cstat-no" title="statement not covered">    if (!skipSyncToAllFiles &amp;&amp; syncFiles) {</span>
+<span class="cstat-no" title="statement not covered">      syncToAllFiles(singular, plural);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (locale === undefined) {</span>
-<span class="cstat-no" title="statement not covered" >      logWarn('WARN: No locale found - check the context of the call to __(). Using ' +</span>
+<span class="cstat-no" title="statement not covered">    if (locale === undefined) {</span>
+<span class="cstat-no" title="statement not covered">      logWarn('WARN: No locale found - check the context of the call to __(). Using ' +</span>
         defaultLocale + ' as current locale');
-<span class="cstat-no" title="statement not covered" >      locale = defaultLocale;</span>
+<span class="cstat-no" title="statement not covered">      locale = defaultLocale;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!locales[locale] &amp;&amp; fallbacks[locale]) {</span>
-<span class="cstat-no" title="statement not covered" >      locale = fallbacks[locale];</span>
+<span class="cstat-no" title="statement not covered">    if (!locales[locale] &amp;&amp; fallbacks[locale]) {</span>
+<span class="cstat-no" title="statement not covered">      locale = fallbacks[locale];</span>
     }
 &nbsp;
     // attempt to read when defined as valid locale
-<span class="cstat-no" title="statement not covered" >    if (!locales[locale]) {</span>
-<span class="cstat-no" title="statement not covered" >      read(locale);</span>
+<span class="cstat-no" title="statement not covered">    if (!locales[locale]) {</span>
+<span class="cstat-no" title="statement not covered">      read(locale);</span>
     }
 &nbsp;
     // fallback to default when missed
-<span class="cstat-no" title="statement not covered" >    if (!locales[locale]) {</span>
+<span class="cstat-no" title="statement not covered">    if (!locales[locale]) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      logWarn('WARN: Locale ' + locale +</span>
+<span class="cstat-no" title="statement not covered">      logWarn('WARN: Locale ' + locale +</span>
         ' couldn\'t be read - check the context of the call to $__. Using ' +
         defaultLocale + ' (default) as current locale');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      locale = defaultLocale;</span>
-<span class="cstat-no" title="statement not covered" >      read(locale);</span>
+<span class="cstat-no" title="statement not covered">      locale = defaultLocale;</span>
+<span class="cstat-no" title="statement not covered">      read(locale);</span>
     }
 &nbsp;
     // dotnotaction add on, @todo: factor out
-<span class="cstat-no" title="statement not covered" >    var defaultSingular = singular;</span>
-<span class="cstat-no" title="statement not covered" >    var defaultPlural = plural;</span>
-<span class="cstat-no" title="statement not covered" >    if (objectNotation) {</span>
-<span class="cstat-no" title="statement not covered" >      var indexOfColon = singular.indexOf(':');</span>
+<span class="cstat-no" title="statement not covered">    var defaultSingular = singular;</span>
+<span class="cstat-no" title="statement not covered">    var defaultPlural = plural;</span>
+<span class="cstat-no" title="statement not covered">    if (objectNotation) {</span>
+<span class="cstat-no" title="statement not covered">      var indexOfColon = singular.indexOf(':');</span>
       // We compare against 0 instead of -1 because
       // we don't really expect the string to start with ':'.
-<span class="cstat-no" title="statement not covered" >      if (0 &lt; indexOfColon) {</span>
-<span class="cstat-no" title="statement not covered" >        defaultSingular = singular.substring(indexOfColon + 1);</span>
-<span class="cstat-no" title="statement not covered" >        singular = singular.substring(0, indexOfColon);</span>
+<span class="cstat-no" title="statement not covered">      if (0 &lt; indexOfColon) {</span>
+<span class="cstat-no" title="statement not covered">        defaultSingular = singular.substring(indexOfColon + 1);</span>
+<span class="cstat-no" title="statement not covered">        singular = singular.substring(0, indexOfColon);</span>
       }
-<span class="cstat-no" title="statement not covered" >      if (plural &amp;&amp; typeof plural !== 'number') {</span>
-<span class="cstat-no" title="statement not covered" >        indexOfColon = plural.indexOf(':');</span>
-<span class="cstat-no" title="statement not covered" >        if (0 &lt; indexOfColon) {</span>
-<span class="cstat-no" title="statement not covered" >          defaultPlural = plural.substring(indexOfColon + 1);</span>
-<span class="cstat-no" title="statement not covered" >          plural = plural.substring(0, indexOfColon);</span>
+<span class="cstat-no" title="statement not covered">      if (plural &amp;&amp; typeof plural !== 'number') {</span>
+<span class="cstat-no" title="statement not covered">        indexOfColon = plural.indexOf(':');</span>
+<span class="cstat-no" title="statement not covered">        if (0 &lt; indexOfColon) {</span>
+<span class="cstat-no" title="statement not covered">          defaultPlural = plural.substring(indexOfColon + 1);</span>
+<span class="cstat-no" title="statement not covered">          plural = plural.substring(0, indexOfColon);</span>
         }
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var accessor = localeAccessor(locale, singular);</span>
-<span class="cstat-no" title="statement not covered" >    var mutator = localeMutator(locale, singular);</span>
+<span class="cstat-no" title="statement not covered">    var accessor = localeAccessor(locale, singular);</span>
+<span class="cstat-no" title="statement not covered">    var mutator = localeMutator(locale, singular);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (plural) {</span>
-<span class="cstat-no" title="statement not covered" >      if (!accessor()) {</span>
-<span class="cstat-no" title="statement not covered" >        mutator({</span>
+<span class="cstat-no" title="statement not covered">    if (plural) {</span>
+<span class="cstat-no" title="statement not covered">      if (!accessor()) {</span>
+<span class="cstat-no" title="statement not covered">        mutator({</span>
           'one': defaultSingular || singular,
           'other': defaultPlural || plural
         });
-<span class="cstat-no" title="statement not covered" >        write(locale);</span>
+<span class="cstat-no" title="statement not covered">        write(locale);</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!accessor()) {</span>
-<span class="cstat-no" title="statement not covered" >      mutator(defaultSingular || singular);</span>
-<span class="cstat-no" title="statement not covered" >      write(locale);</span>
+<span class="cstat-no" title="statement not covered">    if (!accessor()) {</span>
+<span class="cstat-no" title="statement not covered">      mutator(defaultSingular || singular);</span>
+<span class="cstat-no" title="statement not covered">      write(locale);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return accessor();</span>
+<span class="cstat-no" title="statement not covered">    return accessor();</span>
   };
 &nbsp;
   /**
    * initialize the same key in all locales
    * when not already existing, checked via translate
    */
-  var syncToAllFiles = <span class="fstat-no" title="function not covered" >function(singular, plural) {</span>
+  var syncToAllFiles = <span class="fstat-no" title="function not covered">function(singular, plural) {</span>
     // iterate over locales and translate again
     // this will implicitly write/sync missing keys
     // to the rest of locales
-<span class="cstat-no" title="statement not covered" >    for (var l in locales) {</span>
-<span class="cstat-no" title="statement not covered" >      translate(l, singular, plural, true);</span>
+<span class="cstat-no" title="statement not covered">    for (var l in locales) {</span>
+<span class="cstat-no" title="statement not covered">      translate(l, singular, plural, true);</span>
     }
   };
 &nbsp;
@@ -3492,55 +3490,55 @@ module.exports = (function() {
    * @returns {Function} A function that, when invoked, returns the current value stored
    * in the object at the requested location.
    */
-  var localeAccessor = <span class="fstat-no" title="function not covered" >function(locale, singular, allowDelayedTraversal) {</span>
+  var localeAccessor = <span class="fstat-no" title="function not covered">function(locale, singular, allowDelayedTraversal) {</span>
     // Bail out on non-existent locales to defend against internal errors.
-<span class="cstat-no" title="statement not covered" >    if (!locales[locale]) <span class="cstat-no" title="statement not covered" >return Function.prototype;</span></span>
+<span class="cstat-no" title="statement not covered">    if (!locales[locale]) <span class="cstat-no" title="statement not covered">return Function.prototype;</span></span>
 &nbsp;
     // Handle object lookup notation
-<span class="cstat-no" title="statement not covered" >    var indexOfDot = objectNotation &amp;&amp; singular.lastIndexOf(objectNotation);</span>
-<span class="cstat-no" title="statement not covered" >    if (objectNotation &amp;&amp; (0 &lt; indexOfDot &amp;&amp; indexOfDot &lt; singular.length - 1)) {</span>
+<span class="cstat-no" title="statement not covered">    var indexOfDot = objectNotation &amp;&amp; singular.lastIndexOf(objectNotation);</span>
+<span class="cstat-no" title="statement not covered">    if (objectNotation &amp;&amp; (0 &lt; indexOfDot &amp;&amp; indexOfDot &lt; singular.length - 1)) {</span>
       // If delayed traversal wasn't specifically forbidden, it is allowed.
-<span class="cstat-no" title="statement not covered" >      if (typeof allowDelayedTraversal === 'undefined') <span class="cstat-no" title="statement not covered" >allowDelayedTraversal = true;</span></span>
+<span class="cstat-no" title="statement not covered">      if (typeof allowDelayedTraversal === 'undefined') <span class="cstat-no" title="statement not covered">allowDelayedTraversal = true;</span></span>
       // The accessor we're trying to find and which we want to return.
-<span class="cstat-no" title="statement not covered" >      var accessor = null;</span>
+<span class="cstat-no" title="statement not covered">      var accessor = null;</span>
       // An accessor that returns null.
-<span class="cstat-no" title="statement not covered" >      var nullAccessor = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >        return null;</span>
+<span class="cstat-no" title="statement not covered">      var nullAccessor = <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">        return null;</span>
       };
       // Do we need to re-traverse the tree upon invocation of the accessor?
-<span class="cstat-no" title="statement not covered" >      var reTraverse = false;</span>
+<span class="cstat-no" title="statement not covered">      var reTraverse = false;</span>
       // Split the provided term and run the callback for each subterm.
-<span class="cstat-no" title="statement not covered" >      singular.split(objectNotation).reduce(<span class="fstat-no" title="function not covered" >function(object, index) {</span></span>
+<span class="cstat-no" title="statement not covered">      singular.split(objectNotation).reduce(<span class="fstat-no" title="function not covered">function(object, index) {</span></span>
         // Make the accessor return null.
-<span class="cstat-no" title="statement not covered" >        accessor = nullAccessor;</span>
+<span class="cstat-no" title="statement not covered">        accessor = nullAccessor;</span>
         // If our current target object (in the locale tree) doesn't exist or
         // it doesn't have the next subterm as a member...
-<span class="cstat-no" title="statement not covered" >        if (null === object || !object.hasOwnProperty(index)) {</span>
+<span class="cstat-no" title="statement not covered">        if (null === object || !object.hasOwnProperty(index)) {</span>
           // ...remember that we need retraversal (because we didn't find our target).
-<span class="cstat-no" title="statement not covered" >          reTraverse = allowDelayedTraversal;</span>
+<span class="cstat-no" title="statement not covered">          reTraverse = allowDelayedTraversal;</span>
           // Return null to avoid deeper iterations.
-<span class="cstat-no" title="statement not covered" >          return null;</span>
+<span class="cstat-no" title="statement not covered">          return null;</span>
         }
         // We can traverse deeper, so we generate an accessor for this current level.
-<span class="cstat-no" title="statement not covered" >        accessor = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >          return object[index];</span>
+<span class="cstat-no" title="statement not covered">        accessor = <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">          return object[index];</span>
         };
         // Return a reference to the next deeper level in the locale tree.
-<span class="cstat-no" title="statement not covered" >        return object[index];</span>
+<span class="cstat-no" title="statement not covered">        return object[index];</span>
 &nbsp;
       }, locales[locale]);
       // Return the requested accessor.
-<span class="cstat-no" title="statement not covered" >      return <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered">      return <span class="fstat-no" title="function not covered">function() {</span></span>
         // If we need to re-traverse (because we didn't find our target term)
         // traverse again and return the new result (but don't allow further iterations)
         // or return the previously found accessor if it was already valid.
-<span class="cstat-no" title="statement not covered" >        return (reTraverse) ? localeAccessor(locale, singular, false)() : accessor();</span>
+<span class="cstat-no" title="statement not covered">        return (reTraverse) ? localeAccessor(locale, singular, false)() : accessor();</span>
       };
 &nbsp;
     } else {
       // No object notation, just return an accessor that performs array lookup.
-<span class="cstat-no" title="statement not covered" >      return <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >        return locales[locale][singular];</span>
+<span class="cstat-no" title="statement not covered">      return <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">        return locales[locale][singular];</span>
       };
     }
   };
@@ -3558,79 +3556,79 @@ module.exports = (function() {
    * @returns {Function} A function that takes one argument. When the function is
    * invoked, the targeted translation term will be set to the given value inside the locale table.
    */
-  var localeMutator = <span class="fstat-no" title="function not covered" >function(locale, singular, allowBranching) {</span>
+  var localeMutator = <span class="fstat-no" title="function not covered">function(locale, singular, allowBranching) {</span>
     // Bail out on non-existent locales to defend against internal errors.
-<span class="cstat-no" title="statement not covered" >    if (!locales[locale]) <span class="cstat-no" title="statement not covered" >return Function.prototype;</span></span>
+<span class="cstat-no" title="statement not covered">    if (!locales[locale]) <span class="cstat-no" title="statement not covered">return Function.prototype;</span></span>
 &nbsp;
     // Handle object lookup notation
-<span class="cstat-no" title="statement not covered" >    var indexOfDot = objectNotation &amp;&amp; singular.lastIndexOf(objectNotation);</span>
-<span class="cstat-no" title="statement not covered" >    if (objectNotation &amp;&amp; (0 &lt; indexOfDot &amp;&amp; indexOfDot &lt; singular.length - 1)) {</span>
+<span class="cstat-no" title="statement not covered">    var indexOfDot = objectNotation &amp;&amp; singular.lastIndexOf(objectNotation);</span>
+<span class="cstat-no" title="statement not covered">    if (objectNotation &amp;&amp; (0 &lt; indexOfDot &amp;&amp; indexOfDot &lt; singular.length - 1)) {</span>
       // If branching wasn't specifically allowed, disable it.
-<span class="cstat-no" title="statement not covered" >      if (typeof allowBranching === 'undefined') <span class="cstat-no" title="statement not covered" >allowBranching = false;</span></span>
+<span class="cstat-no" title="statement not covered">      if (typeof allowBranching === 'undefined') <span class="cstat-no" title="statement not covered">allowBranching = false;</span></span>
       // This will become the function we want to return.
-<span class="cstat-no" title="statement not covered" >      var accessor = null;</span>
+<span class="cstat-no" title="statement not covered">      var accessor = null;</span>
       // An accessor that takes one argument and returns null.
-<span class="cstat-no" title="statement not covered" >      var nullAccessor = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >        return null;</span>
+<span class="cstat-no" title="statement not covered">      var nullAccessor = <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">        return null;</span>
       };
       // Fix object path.
-<span class="cstat-no" title="statement not covered" >      var fixObject = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >        return {};</span>
+<span class="cstat-no" title="statement not covered">      var fixObject = <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">        return {};</span>
       };
       // Are we going to need to re-traverse the tree when the mutator is invoked?
-<span class="cstat-no" title="statement not covered" >      var reTraverse = false;</span>
+<span class="cstat-no" title="statement not covered">      var reTraverse = false;</span>
       // Split the provided term and run the callback for each subterm.
-<span class="cstat-no" title="statement not covered" >      singular.split(objectNotation).reduce(<span class="fstat-no" title="function not covered" >function(object, index) {</span></span>
+<span class="cstat-no" title="statement not covered">      singular.split(objectNotation).reduce(<span class="fstat-no" title="function not covered">function(object, index) {</span></span>
         // Make the mutator do nothing.
-<span class="cstat-no" title="statement not covered" >        accessor = nullAccessor;</span>
+<span class="cstat-no" title="statement not covered">        accessor = nullAccessor;</span>
         // If our current target object (in the locale tree) doesn't exist or
         // it doesn't have the next subterm as a member...
-<span class="cstat-no" title="statement not covered" >        if (null === object || !object.hasOwnProperty(index)) {</span>
+<span class="cstat-no" title="statement not covered">        if (null === object || !object.hasOwnProperty(index)) {</span>
           // ...check if we're allowed to create new branches.
-<span class="cstat-no" title="statement not covered" >          if (allowBranching) {</span>
+<span class="cstat-no" title="statement not covered">          if (allowBranching) {</span>
             // Fix `object` if `object` is not Object.
-<span class="cstat-no" title="statement not covered" >            if (null === object || typeof object !== 'object') {</span>
-<span class="cstat-no" title="statement not covered" >              object = fixObject();</span>
+<span class="cstat-no" title="statement not covered">            if (null === object || typeof object !== 'object') {</span>
+<span class="cstat-no" title="statement not covered">              object = fixObject();</span>
             }
             // If we are allowed to, create a new object along the path.
-<span class="cstat-no" title="statement not covered" >            object[index] = {};</span>
+<span class="cstat-no" title="statement not covered">            object[index] = {};</span>
           } else {
             // If we aren't allowed, remember that we need to re-traverse later on and...
-<span class="cstat-no" title="statement not covered" >            reTraverse = true;</span>
+<span class="cstat-no" title="statement not covered">            reTraverse = true;</span>
             // ...return null to make the next iteration bail our early on.
-<span class="cstat-no" title="statement not covered" >            return null;</span>
+<span class="cstat-no" title="statement not covered">            return null;</span>
           }
         }
         // Generate a mutator for the current level.
-<span class="cstat-no" title="statement not covered" >        accessor = <span class="fstat-no" title="function not covered" >function(value) {</span></span>
-<span class="cstat-no" title="statement not covered" >          object[index] = value;</span>
-<span class="cstat-no" title="statement not covered" >          return value;</span>
+<span class="cstat-no" title="statement not covered">        accessor = <span class="fstat-no" title="function not covered">function(value) {</span></span>
+<span class="cstat-no" title="statement not covered">          object[index] = value;</span>
+<span class="cstat-no" title="statement not covered">          return value;</span>
         };
         // Generate a fixer for the current level.
-<span class="cstat-no" title="statement not covered" >        fixObject = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >          object[index] = {};</span>
-<span class="cstat-no" title="statement not covered" >          return object[index];</span>
+<span class="cstat-no" title="statement not covered">        fixObject = <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">          object[index] = {};</span>
+<span class="cstat-no" title="statement not covered">          return object[index];</span>
         };
 &nbsp;
         // Return a reference to the next deeper level in the locale tree.
-<span class="cstat-no" title="statement not covered" >        return object[index];</span>
+<span class="cstat-no" title="statement not covered">        return object[index];</span>
 &nbsp;
       }, locales[locale]);
 &nbsp;
       // Return the final mutator.
-<span class="cstat-no" title="statement not covered" >      return <span class="fstat-no" title="function not covered" >function(value) {</span></span>
+<span class="cstat-no" title="statement not covered">      return <span class="fstat-no" title="function not covered">function(value) {</span></span>
         // If we need to re-traverse the tree
         // invoke the search again, but allow branching
         // this time (because here the mutator is being invoked)
         // otherwise, just change the value directly.
-<span class="cstat-no" title="statement not covered" >        return (reTraverse) ? localeMutator(locale, singular, true)(value) : accessor(value);</span>
+<span class="cstat-no" title="statement not covered">        return (reTraverse) ? localeMutator(locale, singular, true)(value) : accessor(value);</span>
       };
 &nbsp;
     } else {
       // No object notation, just return a mutator that performs array lookup and changes the value.
-<span class="cstat-no" title="statement not covered" >      return <span class="fstat-no" title="function not covered" >function(value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        locales[locale][singular] = value;</span>
-<span class="cstat-no" title="statement not covered" >        return value;</span>
+<span class="cstat-no" title="statement not covered">      return <span class="fstat-no" title="function not covered">function(value) {</span></span>
+<span class="cstat-no" title="statement not covered">        locales[locale][singular] = value;</span>
+<span class="cstat-no" title="statement not covered">        return value;</span>
       };
     }
   };
@@ -3638,17 +3636,17 @@ module.exports = (function() {
   /**
    * try reading a file
    */
-  var read = <span class="fstat-no" title="function not covered" >function(locale) {</span>
-<span class="cstat-no" title="statement not covered" >    var localeFile = {},</span>
+  var read = <span class="fstat-no" title="function not covered">function(locale) {</span>
+<span class="cstat-no" title="statement not covered">    var localeFile = {},</span>
       file = getStorageFilePath(locale);
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      logDebug('read ' + file + ' for locale: ' + locale);</span>
-<span class="cstat-no" title="statement not covered" >      localeFile = fs.readFileSync(file);</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      logDebug('read ' + file + ' for locale: ' + locale);</span>
+<span class="cstat-no" title="statement not covered">      localeFile = fs.readFileSync(file);</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
         // parsing filecontents to locales[locale]
-<span class="cstat-no" title="statement not covered" >        locales[locale] = JSON.parse(localeFile);</span>
+<span class="cstat-no" title="statement not covered">        locales[locale] = JSON.parse(localeFile);</span>
       } catch (parseError) {
-<span class="cstat-no" title="statement not covered" >        logError('unable to parse locales from file (maybe ' +</span>
+<span class="cstat-no" title="statement not covered">        logError('unable to parse locales from file (maybe ' +</span>
           file + ' is empty or invalid json?): ', parseError);
       }
     } catch (readError) {
@@ -3657,54 +3655,54 @@ module.exports = (function() {
       // or locales[locale] are empty, which initializes an empty locale.json file
 &nbsp;
       // since the current invalid locale could exist, we should back it up
-<span class="cstat-no" title="statement not covered" >      if (fs.existsSync(file)) {</span>
-<span class="cstat-no" title="statement not covered" >        logDebug('backing up invalid locale ' + locale + ' to ' + file + '.invalid');</span>
-<span class="cstat-no" title="statement not covered" >        fs.renameSync(file, file + '.invalid');</span>
+<span class="cstat-no" title="statement not covered">      if (fs.existsSync(file)) {</span>
+<span class="cstat-no" title="statement not covered">        logDebug('backing up invalid locale ' + locale + ' to ' + file + '.invalid');</span>
+<span class="cstat-no" title="statement not covered">        fs.renameSync(file, file + '.invalid');</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      logDebug('initializing ' + file);</span>
-<span class="cstat-no" title="statement not covered" >      write(locale);</span>
+<span class="cstat-no" title="statement not covered">      logDebug('initializing ' + file);</span>
+<span class="cstat-no" title="statement not covered">      write(locale);</span>
     }
   };
 &nbsp;
   /**
    * try writing a file in a created directory
    */
-  var write = <span class="fstat-no" title="function not covered" >function(locale) {</span>
-<span class="cstat-no" title="statement not covered" >    var stats, target, tmp;</span>
+  var write = <span class="fstat-no" title="function not covered">function(locale) {</span>
+<span class="cstat-no" title="statement not covered">    var stats, target, tmp;</span>
 &nbsp;
     // don't write new locale information to disk if updateFiles isn't true
-<span class="cstat-no" title="statement not covered" >    if (!updateFiles) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered">    if (!updateFiles) {</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
     }
 &nbsp;
     // creating directory if necessary
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      stats = fs.lstatSync(directory);</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      stats = fs.lstatSync(directory);</span>
     } catch (e) {
-<span class="cstat-no" title="statement not covered" >      logDebug('creating locales dir in: ' + directory);</span>
-<span class="cstat-no" title="statement not covered" >      fs.mkdirSync(directory, directoryPermissions);</span>
+<span class="cstat-no" title="statement not covered">      logDebug('creating locales dir in: ' + directory);</span>
+<span class="cstat-no" title="statement not covered">      fs.mkdirSync(directory, directoryPermissions);</span>
     }
 &nbsp;
     // first time init has an empty file
-<span class="cstat-no" title="statement not covered" >    if (!locales[locale]) {</span>
-<span class="cstat-no" title="statement not covered" >      locales[locale] = {};</span>
+<span class="cstat-no" title="statement not covered">    if (!locales[locale]) {</span>
+<span class="cstat-no" title="statement not covered">      locales[locale] = {};</span>
     }
 &nbsp;
     // writing to tmp and rename on success
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      target = getStorageFilePath(locale);</span>
-<span class="cstat-no" title="statement not covered" >      tmp = target + '.tmp';</span>
-<span class="cstat-no" title="statement not covered" >      fs.writeFileSync(tmp, JSON.stringify(locales[locale], null, indent), 'utf8');</span>
-<span class="cstat-no" title="statement not covered" >      stats = fs.statSync(tmp);</span>
-<span class="cstat-no" title="statement not covered" >      if (stats.isFile()) {</span>
-<span class="cstat-no" title="statement not covered" >        fs.renameSync(tmp, target);</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      target = getStorageFilePath(locale);</span>
+<span class="cstat-no" title="statement not covered">      tmp = target + '.tmp';</span>
+<span class="cstat-no" title="statement not covered">      fs.writeFileSync(tmp, JSON.stringify(locales[locale], null, indent), 'utf8');</span>
+<span class="cstat-no" title="statement not covered">      stats = fs.statSync(tmp);</span>
+<span class="cstat-no" title="statement not covered">      if (stats.isFile()) {</span>
+<span class="cstat-no" title="statement not covered">        fs.renameSync(tmp, target);</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        logError('unable to write locales to file (either ' +</span>
+<span class="cstat-no" title="statement not covered">        logError('unable to write locales to file (either ' +</span>
           tmp + ' or ' + target + ' are not writeable?): ');
       }
     } catch (e) {
-<span class="cstat-no" title="statement not covered" >      logError('unexpected error writing files (either ' +</span>
+<span class="cstat-no" title="statement not covered">      logError('unexpected error writing files (either ' +</span>
         tmp + ' or ' + target + ' are not writeable?): ', e);
     }
   };
@@ -3712,47 +3710,48 @@ module.exports = (function() {
   /**
    * basic normalization of filepath
    */
-  var getStorageFilePath = <span class="fstat-no" title="function not covered" >function(locale) {</span>
+  var getStorageFilePath = <span class="fstat-no" title="function not covered">function(locale) {</span>
     // changed API to use .json as default, #16
-<span class="cstat-no" title="statement not covered" >    var ext = extension || '.json',</span>
+<span class="cstat-no" title="statement not covered">    var ext = extension || '.json',</span>
       filepath = path.normalize(directory + pathsep + prefix + locale + ext),
       filepathJS = path.normalize(directory + pathsep + prefix + locale + '.js');
     // use .js as fallback if already existing
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if (fs.statSync(filepathJS)) {</span>
-<span class="cstat-no" title="statement not covered" >        logDebug('using existing file ' + filepathJS);</span>
-<span class="cstat-no" title="statement not covered" >        extension = '.js';</span>
-<span class="cstat-no" title="statement not covered" >        return filepathJS;</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      if (fs.statSync(filepathJS)) {</span>
+<span class="cstat-no" title="statement not covered">        logDebug('using existing file ' + filepathJS);</span>
+<span class="cstat-no" title="statement not covered">        extension = '.js';</span>
+<span class="cstat-no" title="statement not covered">        return filepathJS;</span>
       }
     } catch (e) {
-<span class="cstat-no" title="statement not covered" >      logDebug('will use ' + filepath);</span>
+<span class="cstat-no" title="statement not covered">      logDebug('will use ' + filepath);</span>
     }
-<span class="cstat-no" title="statement not covered" >    return filepath;</span>
+<span class="cstat-no" title="statement not covered">    return filepath;</span>
   };
 &nbsp;
   /**
    * Logging proxies
    */
-<span class="fstat-no" title="function not covered" >  function logDebug(msg) {</span>
-<span class="cstat-no" title="statement not covered" >    logDebugFn(msg);</span>
+<span class="fstat-no" title="function not covered">  function logDebug(msg) {</span>
+<span class="cstat-no" title="statement not covered">    logDebugFn(msg);</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function logWarn(msg) {</span>
-<span class="cstat-no" title="statement not covered" >    logWarnFn(msg);</span>
+<span class="fstat-no" title="function not covered">  function logWarn(msg) {</span>
+<span class="cstat-no" title="statement not covered">    logWarnFn(msg);</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function logError(msg) {</span>
-<span class="cstat-no" title="statement not covered" >    logErrorFn(msg);</span>
+<span class="fstat-no" title="function not covered">  function logError(msg) {</span>
+<span class="cstat-no" title="statement not covered">    logErrorFn(msg);</span>
   }
 &nbsp;
   return i18n;
 &nbsp;
 }());
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 08:59:34 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 20:43:17 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
