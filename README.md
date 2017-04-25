@@ -1,6 +1,6 @@
 # npmtest-i18n
 
-#### test coverage for  [i18n (v0.8.3)](http://github.com/mashpie/i18n-node)  [![npm package](https://img.shields.io/npm/v/npmtest-i18n.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-i18n) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-i18n.svg)](https://travis-ci.org/npmtest/node-npmtest-i18n)
+#### basic test coverage for  [i18n (v0.8.3)](http://github.com/mashpie/i18n-node)  [![npm package](https://img.shields.io/npm/v/npmtest-i18n.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-i18n) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-i18n.svg)](https://travis-ci.org/npmtest/node-npmtest-i18n)
 
 #### lightweight translation module with dynamic json storage
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-i18n/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-i18n/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-i18n/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-i18n/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-i18n/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-i18n/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-i18n/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-i18n/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-i18n/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-i18n/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-i18n/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-i18n/build/coverage.html/index.html)
 
@@ -96,7 +96,8 @@
         "test": "npm run jshint && make test",
         "test-ci": "npm run jshint && istanbul cover ./node_modules/mocha/bin/_mocha"
     },
-    "version": "0.8.3"
+    "version": "0.8.3",
+    "bin": {}
 }
 ```
 
